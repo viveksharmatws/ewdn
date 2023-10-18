@@ -1,0 +1,26 @@
+[
+  {
+    "discountRate": "Flat 20% Discount",
+    "productTitle": "Mens Casual Style T-Shirt",
+    "start": "Starting At",
+    "price": " $59.00",
+    "button": "Shop now ",
+    "image": "/images/whitesmile.jpg"
+  },
+  {
+    "discountRate": "Flat 30% Discount",
+    "productTitle": "Buy White Dress For Women",
+    "start": "Starting At ",
+    "price": " $48.00",
+    "button": "Shop now ",
+    "image": "/images/whiteamazed.jpg"
+  },
+  {
+    "discountRate": "Flat 30% Discount",
+    "productTitle": "Latest Women T-Shirt & Pant",
+    "start": "Starting At",
+    "price": " $39.00",
+    "button": "Shop now ",
+    "image": "/images/pinkimage.jpg"
+  }
+]

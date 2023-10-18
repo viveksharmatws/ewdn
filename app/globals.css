@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom color variables */
+@layer base {
+  :root {
+    --background: #f0f0f0; /* Set your background color */
+    --text-color: #333; /* Set your text color */
+    --primary-color: #007bff; /* Set your primary color */
+  }
+
+  .dark {
+    --background: #333; /* Set your dark mode background color */
+    --text-color: #fff; /* Set your dark mode text color */
+    --primary-color: #ff9900; /* Set your dark mode primary color */
+  }
+}
+
+/* Custom styles for .react-multi-carousel-dot-list */
+@layer base {
+  .react-multi-carousel-dot-list {
+    padding-top: 10px; /* Adjust the padding value as needed */
+  }
+}
+
+/* Your custom classes */
+@layer components {
+  .product {
+    /* Your styles for the product container */
+  }
+
+  /* Your .product-image styles */
+  .product-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Zoom effect on hover */
+  .group:hover .product-image {
+    transform: scale(
+      1.1
+    ); /* Adjust the scale factor for the desired zoom level */
+  }
+}
+@layer components {
+  .react-multi-carousel-dot button {
+    @apply bg-red-500 text-white;
+  }
+}
