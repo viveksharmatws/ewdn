@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Progress } from "@/components/ui/progress";
+import { IoStar } from "react-icons/io5";
 
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import { useState } from "react";
@@ -398,28 +399,12 @@ const page = () => {
                     >
                       {product.heading}
                     </Link>
-                    <div>
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-
-                      <StarHalfIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
+                    <div className="flex py-1">
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                     </div>
                     <h3 className="mt-[4px] text-[20px] font-medium leading-[20px] text-[#ff0000]  ">
                       ${product.price}
@@ -520,28 +505,12 @@ const page = () => {
                     >
                       {product.heading}
                     </Link>
-                    <div>
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-                      <StarIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
-
-                      <StarHalfIcon
-                        fontSize="large"
-                        className="h-[17px] w-[17px] fill-[#F2B600]"
-                      />
+                    <div className="flex py-1">
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                      <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                     </div>
                     <h3 className="mt-[4px] text-[20px] font-medium leading-[20px] text-[#ff0000]  ">
                       ${product.price}

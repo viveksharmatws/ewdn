@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import jsonData from "../data.json";
-
-import StarIcon from "@mui/icons-material/Star";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
+import { IoStar } from "react-icons/io5";
 
 import Image from "next/image";
+import Link from "@/node_modules/next/link";
 
 const DealofDay = () => {
   return (
@@ -92,31 +91,18 @@ const DealofDay = () => {
               <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
                 {product.subheading}
               </h3>
-              <h2 className=" text-[18px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1">
+              <Link
+                href="/productdetailblog"
+                className=" text-[18px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1"
+              >
                 {product.heading}
-              </h2>
-              <div>
-                <StarIcon
-                  fontSize="large"
-                  className="h-[17px] w-[17px] fill-[#F2B600]"
-                />
-                <StarIcon
-                  fontSize="large"
-                  className="h-[17px] w-[17px] fill-[#F2B600]"
-                />
-                <StarIcon
-                  fontSize="large"
-                  className="h-[17px] w-[17px] fill-[#F2B600]"
-                />
-                <StarIcon
-                  fontSize="large"
-                  className="h-[17px] w-[17px] fill-[#F2B600]"
-                />
-
-                <StarHalfIcon
-                  fontSize="large"
-                  className="h-[17px] w-[17px] fill-[#F2B600]"
-                />
+              </Link>
+              <div className="flex py-1">
+                <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
               </div>
               <h3 className="mt-[4px] text-[20px] font-medium leading-[20px] text-[#ff0000]  ">
                 ${product.price}

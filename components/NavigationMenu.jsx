@@ -40,27 +40,102 @@ const NavigationMenubar = () => {
                       <div className="min-h-[300px] min-w-[600px] p-10  z-50 ">
                         <div className="flex  xl:gap-[100px] pb-10">
                           <ul>
-                            <li className="font-semibold">Apparel</li>
-                            <li>Woman Bags</li>
-                            <li>Sneaker Shoes </li>
-                            <li>Women Clothes</li>
-                            <li>Men sunglasses</li>
+                            <li
+                              href="/products"
+                              className="  uppercase pb-3 font-semibold"
+                            >
+                              Apparel
+                            </li>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Woman Bags
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Sneaker Shoes{" "}
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Women Clothes
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Men sunglasses
+                            </Link>
                           </ul>
 
                           <ul>
-                            <li className="font-semibold">Outwear</li>
-                            <li>Men black Watch</li>
-                            <li>Woman Bags</li>
-                            <li>Blazzers</li>
-                            <li>Hoodies</li>
+                            <li
+                              href="/products"
+                              className="  uppercase pb-3 font-semibold"
+                            >
+                              Outwear
+                            </li>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Men black Watch
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Woman Bags
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Blazzers
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Hoodies
+                            </Link>
                           </ul>
 
-                          <ul>
-                            <li className="font-semibold">Outwear</li>
-                            <li>Men black Watch</li>
-                            <li>Woman Bags</li>
-                            <li>Blazzers</li>
-                            <li>Hoodies</li>
+                          <ul clas>
+                            <li
+                              href="/products"
+                              className="  uppercase pb-3 font-semibold"
+                            >
+                              Outwear
+                            </li>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Men black Watch
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Woman Bags
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Blazzers
+                            </Link>
+                            <Link
+                              href="/products"
+                              className="cursor-pointer line-clamp-1"
+                            >
+                              Hoodies
+                            </Link>
                           </ul>
                         </div>
                         <div>

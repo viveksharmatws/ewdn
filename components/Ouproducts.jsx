@@ -1,3 +1,4 @@
+import Link from "@/node_modules/next/link";
 import React from "react";
 
 const Ouproducts = () => {
@@ -10,15 +11,24 @@ const Ouproducts = () => {
           </h1>
         </div>
         <div className="max-md:flex-row flex  gap-5 ">
-          <button className=" font-medium bg-[#F0F0F0]  sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   leading-[15px] sm:leading-[26px] ">
+          <Link
+            href="/products"
+            className=" font-medium bg-[#F0F0F0]  sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   leading-[15px] sm:leading-[26px] "
+          >
             Featured
-          </button>
-          <button className=" font-medium  border border-[#F0F0F0] sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   sm:leading-[26px] leading-[15px] hover:bg-[#F0F0F0] ">
+          </Link>
+          <Link
+            href="/products"
+            className=" font-medium  border border-[#F0F0F0] sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   sm:leading-[26px] leading-[15px] hover:bg-[#F0F0F0] "
+          >
             New Arrivals
-          </button>
-          <button className=" font-medium  border border-[#F0F0F0] sm:px-[39px] py-[10px] px-[10px]  sm:py-2 sm:text-[17px]  leading-[15px] sm:leading-[26px] hover:bg-[#F0F0F0] ">
+          </Link>
+          <Link
+            href="/products"
+            className=" font-medium  border border-[#F0F0F0] sm:px-[39px] py-[10px] px-[10px]  sm:py-2 sm:text-[17px]  leading-[15px] sm:leading-[26px] hover:bg-[#F0F0F0] "
+          >
             Best Sellers
-          </button>
+          </Link>
         </div>
       </div>
     </section>
