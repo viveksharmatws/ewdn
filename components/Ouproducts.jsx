@@ -2,24 +2,25 @@ import React from "react";
 
 const Ouproducts = () => {
   return (
-    <section className="mx-auto max-w-[1400px] pt-[90px] ">
-      <div className="flex justify-between">
+    <section className="mx-auto max-w-[1430px] pt-[60px] sm:pt-[90px] px-[15px]">
+      <div className="  flex-row  justify-between flex items-center max-lg:flex-col ">
         <div className="text-[45px] font-normal leading-[47px]">
-          <h1>Our Products</h1>
+          <h1 className=" sm:text-[45px] text-[30px] sm:pb-5 pb-3">
+            Our Products
+          </h1>
         </div>
-        <div className="flex gap-5">
-          <button className="bg-[#F0F0F0]  px-[39px] py-2 text-[17px] leading-[26px] ">
+        <div className="max-md:flex-row flex  gap-5 ">
+          <button className=" font-medium bg-[#F0F0F0]  sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   leading-[15px] sm:leading-[26px] ">
             Featured
           </button>
-          <button className=" border border-[#F0F0F0] px-[39px] py-2 text-[17px] leading-[26px] hover:bg-[#F0F0F0] ">
+          <button className=" font-medium  border border-[#F0F0F0] sm:px-[39px]  py-[10px] px-[10px] sm:py-2 sm:text-[17px]   sm:leading-[26px] leading-[15px] hover:bg-[#F0F0F0] ">
             New Arrivals
           </button>
-          <button className=" border border-[#F0F0F0] px-[39px] py-2 text-[17px] leading-[26px] hover:bg-[#F0F0F0] ">
+          <button className=" font-medium  border border-[#F0F0F0] sm:px-[39px] py-[10px] px-[10px]  sm:py-2 sm:text-[17px]  leading-[15px] sm:leading-[26px] hover:bg-[#F0F0F0] ">
             Best Sellers
           </button>
         </div>
       </div>
-      <div></div>
     </section>
   );
 };

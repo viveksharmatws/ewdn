@@ -2,7 +2,7 @@ import DealofDay from "@/components/DealofDay";
 import Fourcategories from "@/components/Fourcategories";
 import Gridproducts from "@/components/Gridproducts";
 import Homebanner from "@/components/Homebanner";
-import InstagramCarousal from "@/components/InstagramCarousal";
+
 import LatestBlogs from "@/components/LatestBlog";
 
 import Marquecontent from "@/components/Marquecontent";
@@ -31,7 +31,6 @@ const page = () => {
       <Tshirtspec />
       <Testimonials />
       <LatestBlogs />
-      <InstagramCarousal />
     </>
   );
 };
