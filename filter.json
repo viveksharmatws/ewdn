@@ -1,0 +1,56 @@
+{
+  "filters": [
+    {
+      "filterType": "Availability",
+      "data": [
+        { "Title": "Available", "count": 5 },
+        { "Title": "Instock", "count": 8 },
+        { "Title": "Not Available", "count": 12 }
+      ]
+    },
+    {
+      "filterType": "Size",
+      "data": [
+        { "Title": "Small", "count": 5 },
+        { "Title": "Medium", "count": 8 },
+        { "Title": "Large", "count": 12 },
+        { "Title": "XXL", "count": 12 }
+      ]
+    },
+    {
+      "filterType": "Brand",
+      "data": [
+        { "Title": "Jelly Kelly", "count": 5 },
+        { "Title": "Fashion", "count": 8 },
+        { "Title": "London Britches", "count": 12 },
+        { "Title": "Porcelian Apparel", "count": 12 },
+        { "Title": "Sunglow Fashion", "count": 12 }
+      ]
+    },
+    {
+      "filterType": "Condition",
+      "data": [
+        { "Title": "New", "count": 5 },
+        { "Title": "Refurbished", "count": 8 },
+        { "Title": "Used", "count": 12 }
+      ]
+    },
+    {
+      "filterType": "Dimension",
+      "data": [
+        { "Title": "40*60", "count": 5 },
+        { "Title": "60*90", "count": 8 },
+        { "Title": "20*40", "count": 12 }
+      ]
+    },
+    {
+      "filterType": "Color",
+      "data": [
+        { "Title": "red", "count": 5 },
+        { "Title": "orange", "count": 8 },
+        { "Title": "green", "count": 12 },
+        { "Title": "blue", "count": 12 }
+      ]
+    }
+  ]
+}

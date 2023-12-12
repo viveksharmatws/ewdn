@@ -1,222 +1,210 @@
 [
   {
-    "image": "/b1.jpg",
-    "hoverimage": "/b2.jpg",
-
-    "price": "$29/m",
+    "all_images": ["/b6.jpg", "/b2.jpg"],
+    "price": "29",
+    "rating": 4.5,
+    "discount": "12",
+    "wishlist": false,
+    "compare": false,
+    "product_status": "new",
     "heading": "Black Biker Jacket Women's",
-    "subheading": "Bewitched Boutique"
+    "subheading": "Bewitched Boutique",
+    "description": "Embrace the serendipitous nature of creativity as you explore an array of designs, including abstract motifs, geometric patterns, floral imprints, and more. These fabrics are a versatile canvas, perfect for fashion designers, interior.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "gray",
+      "sizes": ["s", "m", "l", "xxl"],
+      "condition": "New",
+      "brand": "sunglow fashion",
+      "availability": ["available", "instock", "notavailable"],
+      "dimension": "20*40"
+    }
   },
+
   {
-    "image": "/b2.jpg",
-    "hoverimage": "/g1.jpg",
-    "price": "$149",
+    "all_images": ["/b5.jpg", "/g1.jpg"],
+    "price": "149",
     "heading": "Cherokee Boy's Regular Shirt",
-    "subheading": "Catwalk Clothing"
+    "subheading": "Catwalk Clothing",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "Refurbished",
+      "brand": "Porcelian Apparel",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/g1.jpg",
-    "hoverimage": "/b3.jpg",
-    "price": "$149",
+    "all_images": ["/g1.jpg", "/b3.jpg"],
+    "price": "149",
     "heading": "Black Denim Trucker Jacket",
-    "subheading": "Fashion"
+    "subheading": "Fashion",
+    "description": "In everyday life, '20' appears in various contexts - it's the number of fingers and toes we're born with, it's the age many consider the threshold to adulthood, and it's a significant milestone in terms of years, marking anniversaries and achievements.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "Used",
+      "brand": "Jelly Kelly",
+      "availability": "Available"
+    }
   },
   {
-    "image": "/b3.jpg",
-    "hoverimage": "/b4.jpg",
-    "price": "$149",
+    "all_images": ["/b3.jpg", "/b4.jpg"],
+    "price": "149",
     "heading": "Classic Jacket In White",
-    "subheading": "Jelly kelly"
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b4.jpg",
-    "hoverimage": "/g1.jpg",
-    "price": "$149",
-    "heading": "Grey Solid Polo T-Shirt",
-    "subheading": "Modern Walk"
+    "all_images": ["/b3.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b6.jpg",
-    "hoverimage": "/b5.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
+    "all_images": ["/b5.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b6.jpg",
-    "hoverimage": "/g3.jpg",
-    "price": "$149",
-    "heading": " Koton Polo T-Shirt Gray",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/b5.jpg",
-    "hoverimage": "/g4.jpg",
-    "price": "$149",
-    "heading": "Linen Shirt Plain Olive",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/g4.jpg",
-    "hoverimage": "/g3.jpg",
-    "price": "$149",
-    "heading": "Lisa Charm Daisy Sports Bra",
-    "subheading": "Modern Walk"
-  },
-
-  {
-    "image": "/g3.jpg",
-    "hoverimage": "/g1.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
+    "all_images": ["/b6.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b1.jpg",
-    "hoverimage": "/b4.jpg",
-    "price": "$29/m",
+    "all_images": ["/b6.jpg", "/b2.jpg"],
+    "price": "29",
+    "rating": 4.5,
+    "discount": "12",
+    "wishlist": false,
+    "compare": false,
+    "product_status": "new",
     "heading": "Black Biker Jacket Women's",
-    "subheading": "Bewitched Boutique"
+    "subheading": "Bewitched Boutique",
+    "description": "Embrace the serendipitous nature of creativity as you explore an array of designs, including abstract motifs, geometric patterns, floral imprints, and more. These fabrics are a versatile canvas, perfect for fashion designers, interior.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "gray",
+      "sizes": ["s", "m", "l", "xxl"],
+      "condition": "New",
+      "brand": "sunglow fashion",
+      "availability": ["available", "instock", "notavailable"],
+      "dimension": "20*40"
+    }
   },
   {
-    "image": "/b2.jpg",
-    "hoverimage": "/g1.jpg",
-    "price": "$149",
-    "heading": "Cherokee Boy's Regular Shirt",
-    "subheading": "Catwalk Clothing"
-  },
-  {
-    "image": "/g1.jpg",
-    "hoverimage": "/b3.jpg",
-    "price": "$149",
-    "heading": "Black Denim Trucker Jacket",
-    "subheading": "Fashion"
-  },
-  {
-    "image": "/b3.jpg",
-    "hoverimage": "/b4.jpg",
-    "price": "$149",
+    "all_images": ["/b6.jpg", "/b4.jpg"],
+    "price": "149",
     "heading": "Classic Jacket In White",
-    "subheading": "Jelly kelly"
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b4.jpg",
-    "hoverimage": "/b3.jpg",
-    "price": "$149",
-    "heading": "Grey Solid Polo T-Shirt",
-    "subheading": "Modern Walk"
-  },
-  {
-    "image": "/b6.jpg",
-    "hoverimage": "/b4.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
-  },
-  {
-    "image": "/b6.jpg",
-    "hoverimage": "/b5.jpg",
-    "price": "$149",
-    "heading": " Koton Polo T-Shirt Gray",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/b5.jpg",
-    "hoverimage": "/b6.jpg",
-    "price": "$149",
-    "heading": "Linen Shirt Plain Olive",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/g4.jpg",
-    "hoverimage": "/g3.jpg",
-    "price": "$149",
-    "heading": "Lisa Charm Daisy Sports Bra",
-    "subheading": "Modern Walk"
-  },
-
-  {
-    "image": "/g3.jpg",
-    "hoverimage": "/g1.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
-  },
-  {
-    "image": "/b1.jpg",
-    "hoverimage": "/b2.jpg",
-    "price": "$29/m",
-    "heading": "Black Biker Jacket Women's",
-    "subheading": "Bewitched Boutique"
-  },
-  {
-    "image": "/b2.jpg",
-    "hoverimage": "/b6.jpg",
-    "price": "$149",
-    "heading": "Cherokee Boy's Regular Shirt",
-    "subheading": "Catwalk Clothing"
-  },
-  {
-    "image": "/g1.jpg",
-    "hoverimage": "/b3.jpg",
-    "price": "$149",
-    "heading": "Black Denim Trucker Jacket",
-    "subheading": "Fashion"
-  },
-  {
-    "image": "/b3.jpg",
-    "hoverimage": "/b6.jpg",
-    "price": "$149",
+    "all_images": ["/g3.jpg", "/b4.jpg"],
+    "price": "149",
     "heading": "Classic Jacket In White",
-    "subheading": "Jelly kelly"
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b4.jpg",
-    "hoverimage": "/b6.jpg",
-    "price": "$149",
-    "heading": "Grey Solid Polo T-Shirt",
-    "subheading": "Modern Walk"
+    "all_images": ["/g3.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b2.jpg",
-    "hoverimage": "/b3.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
+    "all_images": ["/b3.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   },
   {
-    "image": "/b6.jpg",
-    "hoverimage": "/g4.jpg",
-    "price": "$149",
-    "heading": " Koton Polo T-Shirt Gray",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/b5.jpg",
-    "hoverimage": "/g3.jpg",
-    "price": "$149",
-    "heading": "Linen Shirt Plain Olive",
-    "subheading": "Sunglow Fashion"
-  },
-
-  {
-    "image": "/g4.jpg",
-    "hoverimage": "/b5.jpg",
-    "price": "$149",
-    "heading": "Lisa Charm Daisy Sports Bra",
-    "subheading": "Modern Walk"
-  },
-
-  {
-    "image": "/g3.jpg",
-    "hoverimage": "/b6.jpg",
-    "price": "$149",
-    "heading": "Hooded Sweatshirt True Royal",
-    "subheading": "Porcelain Apparel"
+    "all_images": ["/b6.jpg", "/b4.jpg"],
+    "price": "149",
+    "heading": "Classic Jacket In White",
+    "subheading": "Jelly Kelly",
+    "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
+    "button": "Add To Cart",
+    "attributes": {
+      "color": "Red",
+      "sizes": ["S", "M", "L"],
+      "condition": "New",
+      "brand": "Fashion",
+      "availability": "Instock"
+    }
   }
 ]

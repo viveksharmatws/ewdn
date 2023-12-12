@@ -9,8 +9,6 @@ function Quotes({ fillColor }) {
       imageRendering="optimizeQuality"
       shapeRendering="geometricPrecision"
       textRendering="geometricPrecision"
-      width={200} // Set the width of the SVG element
-      height={100}
       fill={"red"}
     >
       <path d="M182.5 63.5c1.447-1.385 2.447-1.052 3 1a5.728 5.728 0 00-3-1z"></path>
