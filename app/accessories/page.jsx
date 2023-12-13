@@ -278,7 +278,9 @@ const page = () => {
                 <div>{/* here is the layout switch section */}</div>
               </div>
             ) : (
-              <LayoutGridfullwidth />
+              <div className="pb-[80px]">
+                <LayoutGridfullwidth />
+              </div>
             )}
           </div>
         </div>

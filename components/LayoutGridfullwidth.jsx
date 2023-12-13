@@ -10,7 +10,7 @@ const LayoutGridfullwidth = () => {
     <>
       {jsonData.map((product) => (
         <div className="flex-col pb-[10px]">
-          <div className=" w-full mx-auto  flex max-sm:flex-col p-[2px] pb-[10px] ">
+          <div className=" w-full mx-auto  flex max-sm:flex-col p-[2px] pb-[10px]  ">
             <div className=" item-center justify-center flex  max-w-[260px] max-sm:mx-auto sm:min-w-[260px] max-h-[360px] shrink-0">
               <Image
                 src={`/images${product.all_images[0]}`}

@@ -1,7 +1,7 @@
 import Image from "next/image"; // Import the image component properly
-import StarIcon from "@mui/icons-material/Star";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
+
 import Link from "@/node_modules/next/link";
+import { IoStar } from "react-icons/io5";
 
 const HorizontalProductCard = ({ imageUrl }) => {
   return (
@@ -17,12 +17,12 @@ const HorizontalProductCard = ({ imageUrl }) => {
       </div>
       <div className="pl-2">
         <span className="flex ">
-          <div>
-            <StarIcon className="fill-[#f2b600] w-[14px] h-[15px]" />
-            <StarIcon className="fill-[#f2b600] w-[14px] h-[15px]" />
-            <StarIcon className="fill-[#f2b600] w-[14px] h-[15px]" />
-            <StarIcon className="fill-[#f2b600] w-[14px] h-[15px]" />
-            <StarHalfIcon className=" w-[14px] h-[15px]" />
+          <div className="flex py-1">
+            <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+            <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+            <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+            <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+            <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
           </div>
         </span>
         <Link

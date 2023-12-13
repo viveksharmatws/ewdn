@@ -1,6 +1,4 @@
 import React from "react";
-import StarIcon from "@mui/icons-material/Star";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
 import jsonData from "../data.json";
 import Image from "next/image";
 import Discountsection from "./Discountsection";
