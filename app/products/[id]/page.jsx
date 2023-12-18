@@ -1,33 +1,50 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { MdContentCopy } from "react-icons/md";
 import Image from "next/image";
-import StarIcon from "@mui/icons-material/Star";
+
+import { useParams } from "next/navigation";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Progress } from "@/components/ui/progress";
 import { IoStar } from "react-icons/io5";
-
-import StarHalfIcon from "@mui/icons-material/StarHalf";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import React from "react";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ImageZoom from "react-image-zooom";
 import { Input } from "@/components/ui/input";
 import Breadcrumbcomponent from "@/components/Breadcrumbcomponent";
 import Security from "@/elements/securty";
-
 import Reviews from "@/elements/Reviews";
-
 import jsonData from "data.json";
 import { ChevronUp, ChevronDown } from "lucide-react";
-
 import Tabscompo from "@/components/Tabs";
 import Link from "@/node_modules/next/link";
+import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
+  const params = useParams();
+  const user = params;
+  const [product, setProduct] = useState([]);
+  const [inputValue, setInputValue] = useState("1");
+  const { toast } = useToast();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const result = jsonData.find((item) => item.id == user.id);
+        setProduct(result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchPosts();
+  }, [params]);
+
   const [mainImage, setMainImage] = useState("/images/dialogueperson.jpg");
   const carouselImages = [
     "/images/dialogueperson.jpg",
@@ -39,24 +56,6 @@ const page = () => {
     "/images/g6.jpg",
   ];
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 8000, min: 1024 },
-      items: 4,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 640, min: 464 },
-      items: 2,
-      slidesToSlide: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
-
   const settings = {
     infinite: true,
     speed: 500,
@@ -66,8 +65,8 @@ const page = () => {
     prevArrow: <ChevronUp />,
     nextArrow: <ChevronDown />,
     slidesToScroll: 1,
-    vertical: true, // Enable vertical mode
-    verticalSwiping: true, // Enable vertical swiping
+    vertical: true,
+    verticalSwiping: true,
   };
 
   const settings2 = {
@@ -79,14 +78,26 @@ const page = () => {
     prevArrow: <ChevronUp />,
     nextArrow: <ChevronDown />,
     slidesToScroll: 1,
-    vertical: false, // Enable vertical mode
-    verticalSwiping: true, // Enable vertical swiping
+    vertical: false,
+    verticalSwiping: true,
   };
 
   const handleImageClick = (newImage) => {
     setMainImage(newImage);
   };
 
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    setInputValue(value);
+  };
+  const addToCart = (product) => {
+    const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedCart = [
+      ...existingCartItems,
+      { product: product, inputValue: inputValue },
+    ];
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
   return (
     <>
       <Breadcrumbcomponent />
@@ -104,6 +115,7 @@ const page = () => {
                         height={50}
                         onClick={() => handleImageClick(i)}
                         className="w-full"
+                        alt="image"
                       />
                     </div>
                   ))}
@@ -142,50 +154,37 @@ const page = () => {
             <div>
               <div>
                 <div className="flex gap-[10px] items-center">
-                  <div className="flex items-center">
-                    <StarIcon
-                      fontSize="large"
-                      className="  fill-[#f2b600] h-[14px] w-[13px] "
-                    />
-                    <StarIcon
-                      fontSize="large"
-                      className="  fill-[#f2b600] h-[14px] w-[13px] "
-                    />
-                    <StarIcon
-                      fontSize="large"
-                      className="  fill-[#f2b600] h-[14px] w-[13px] "
-                    />
-                    <StarIcon
-                      fontSize="large"
-                      className="  fill-[#f2b600] h-[14px] w-[13px] "
-                    />
-
-                    <StarHalfIcon
-                      fontSize="large"
-                      className="  fill-[#f2b600] h-[14px] w-[13px] "
-                    />
+                  <div className="flex py-1">
+                    <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                    <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                    <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                    <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
+                    <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                   </div>
                   <div className="pl-[5px]"> 0 Reviews(s)</div>
                 </div>
               </div>
               <div className=" mb-[7px] text-[28px] font-medium tracking-[0.5px]  text-black">
-                Cherokee Boys Regular Shirt
+                {product.heading}
               </div>
               <div className="mb-[15px] text-[18px] font-normal leading-[26px] text-[#666]">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
-                necessitatibus rerum repellendus earum nisi quidem illo tenetur,
-                at sit delectus quos enim nihil inventore nesciunt voluptatem
-                accusantium ullam sapiente excepturi.
+                {product.description}
               </div>
             </div>
             <div className="flex items-center justify-between border-t-[1px]  border-gray-300 pt-5">
               <div className="flex-col ">
-                <h3 className="mb-[7px] text-[18px] font-normal leading-[26px] tracking-[0.5px]">
-                  Brand: Catwalk Clothing
+                <h3 className="mb-[7px] capitalize text-[18px] font-normal leading-[26px] tracking-[0.5px]">
+                  Brand: {product.brand}
                 </h3>
-                <h3 className="text-[18px] font-normal leading-[26px]  tracking-[0.5px]">
-                  Condition: Used
-                </h3>
+                <div className="flex items-center  gap-[10px]">
+                  <p className="text-[18px] font-normal leading-[26px]  tracking-[0.5px]">
+                    Condition:
+                  </p>
+
+                  <span className=" text-[18px] font-normal leading-[26px] tracking-[0.5px]">
+                    {product.condition}
+                  </span>
+                </div>
               </div>
 
               <div>
@@ -205,19 +204,23 @@ const page = () => {
               <h3 className=" text-[18px] font-normal  leading-[26px] tracking-[0.5px] ">
                 Available In Stock:
                 <span className="text-[18px] font-medium leading-[26px] tracking-[0.5px]  text-[#4CBB6C]">
-                  82 Items
+                  {product.leftcount} Items
                 </span>
               </h3>
             </div>
             <div>
-              <Progress className=" h-[6px] mt-[10px] bg-[#ddd]" value={87} />
+              <Progress
+                className=" h-[6px] mt-[10px] bg-[#ddd]"
+                howmany={product.leftcount}
+              />
             </div>
-
             <div className="py-[5px]">
               <p>
                 Hurry up! only
-                <span className="text-[#ff0000] font-medium">189 </span>items
-                left in stock!
+                <span className="text-[#ff0000] px-1 font-semibold ">
+                  {product.leftcount}
+                </span>
+                items left in stock!
               </p>
             </div>
             <h3 className="text-[18px] font-normal leading-[26px] tracking-[0.5px]">
@@ -233,10 +236,10 @@ const page = () => {
                 $58.00
               </span>
               <span className="text-[23px] font-semibold text-red-600">
-                $51.04
+                ${product.price}
               </span>
               <span className="bg-red-600 px-[8px] text-[13px] font-medium text-white">
-                SAVE 12%
+                -{product.discount}%
               </span>
             </div>
             <div>
@@ -246,16 +249,27 @@ const page = () => {
             </div>
             <div className="mt-[14px] flex gap-2">
               <div>
-                <Input
+                <input
                   type="number"
                   placeholder="1"
-                  className=" max-w-[70px] outline-none text-black text-[22px]  min-h-[44px]"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  className="max-w-[70px] outline-none text-black text-[22px] min-h-[44px]"
                 />
               </div>
-              <div className="  flex sm:min-w-[200px] min-w-[150px] items-center justify-center  px-[15px] py-[10px] sm:px-[25px] sm:py-[10px] text-white bg-black hover:text-white min-h-[44px]">
-                <Link href="/checkout" className="cursor-pointer">
+              <div className="  flex sm:min-w-[200px] min-w-[150px] items-center justify-center  px-[15px] py-[10px] sm:px-[25px] sm:py-[10px] text-white bg-[#222] hover:text-white min-h-[44px]">
+                <button
+                  className="cursor-pointer"
+                  onClick={() => {
+                    addToCart(product);
+                    toast({
+                      title: "This Product is added to your cart",
+                      description: `${product.heading} is added to your cart`,
+                    });
+                  }}
+                >
                   Add to Cart
-                </Link>
+                </button>
               </div>
             </div>
             <div className="sm:mt-[15px] mt-[10px]  flex gap-2 sm:gap-5">
@@ -278,6 +292,7 @@ const page = () => {
                 In Stock
               </span>
             </div>
+
             <div className="flex gap-2 mb-[10px]">
               <div className="items-center justify-center flex w-[58px] h-[33px] hover:fill-[#00f0e0] border-[#00f0e0] border">
                 <Image src="/images/twitter.png" width={65} height={35} />
@@ -289,6 +304,7 @@ const page = () => {
                 <Image src="/images/facebook.png" width={35} height={35} />
               </div>
             </div>
+
             <div className="flex-col space-y-[10px]">
               <Security
                 Title="Security policy"

@@ -1,121 +1,131 @@
 [
   {
+    "id": "1",
     "all_images": ["/b6.jpg", "/b2.jpg"],
     "price": "29",
     "rating": 4.5,
-    "discount": "12",
+    "discount": "25",
     "wishlist": false,
+    "leftcount": "80",
     "compare": false,
     "product_status": "new",
     "heading": "Black Biker Jacket Women's",
     "subheading": "Bewitched Boutique",
     "description": "Embrace the serendipitous nature of creativity as you explore an array of designs, including abstract motifs, geometric patterns, floral imprints, and more. These fabrics are a versatile canvas, perfect for fashion designers, interior.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "gray",
-      "sizes": ["s", "m", "l", "xxl"],
-      "condition": "New",
-      "brand": "sunglow fashion",
-      "availability": ["available", "instock", "notavailable"],
-      "dimension": "20*40"
-    }
+    "color": "gray",
+    "sizes": ["s", "m", "l", "xxl"],
+    "condition": "New",
+    "brand": "sunglow fashion",
+    "dimension": "20*40"
   },
 
   {
+    "id": "2",
     "all_images": ["/b5.jpg", "/g1.jpg"],
     "price": "149",
     "heading": "Cherokee Boy's Regular Shirt",
     "subheading": "Catwalk Clothing",
+    "discount": "5",
+    "leftcount": "50",
+
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "Refurbished",
-      "brand": "Porcelian Apparel",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "Refurbished",
+    "brand": "Porcelian Apparel"
   },
   {
+    "id": "3",
     "all_images": ["/g1.jpg", "/b3.jpg"],
     "price": "149",
     "heading": "Black Denim Trucker Jacket",
+    "discount": "10",
+    "leftcount": "15",
+
     "subheading": "Fashion",
     "description": "In everyday life, '20' appears in various contexts - it's the number of fingers and toes we're born with, it's the age many consider the threshold to adulthood, and it's a significant milestone in terms of years, marking anniversaries and achievements.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "Used",
-      "brand": "Jelly Kelly",
-      "availability": "Available"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "Used",
+    "brand": "Jelly Kelly"
   },
   {
+    "id": "4",
     "all_images": ["/b3.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "20",
+    "leftcount": "70",
+
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "5",
     "all_images": ["/b3.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "35",
+    "leftcount": "100",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "6",
     "all_images": ["/b5.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "60",
+    "leftcount": "100",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "7",
     "all_images": ["/b6.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "45",
+    "leftcount": "100",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "8",
     "all_images": ["/b6.jpg", "/b2.jpg"],
     "price": "29",
     "rating": 4.5,
-    "discount": "12",
+    "leftcount": "100",
+    "discount": "32",
     "wishlist": false,
     "compare": false,
     "product_status": "new",
@@ -123,88 +133,90 @@
     "subheading": "Bewitched Boutique",
     "description": "Embrace the serendipitous nature of creativity as you explore an array of designs, including abstract motifs, geometric patterns, floral imprints, and more. These fabrics are a versatile canvas, perfect for fashion designers, interior.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "gray",
-      "sizes": ["s", "m", "l", "xxl"],
-      "condition": "New",
-      "brand": "sunglow fashion",
-      "availability": ["available", "instock", "notavailable"],
-      "dimension": "20*40"
-    }
+
+    "color": "gray",
+    "sizes": ["s", "m", "l", "xxl"],
+    "condition": "New",
+    "brand": "sunglow fashion",
+    "dimension": "20*40"
   },
   {
+    "id": "9",
     "all_images": ["/b6.jpg", "/b4.jpg"],
     "price": "149",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
+    "discount": "12",
+    "leftcount": "30",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "10",
     "all_images": ["/g3.jpg", "/b4.jpg"],
     "price": "149",
+    "leftcount": "50",
+    "discount": "8",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "11",
     "all_images": ["/g3.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "25",
+    "leftcount": "20",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "12",
     "all_images": ["/b3.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "15",
+    "leftcount": "90",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   },
   {
+    "id": "13",
     "all_images": ["/b6.jpg", "/b4.jpg"],
     "price": "149",
+    "discount": "20",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",
     "description": "Ah, the captivating number 20! It's a figure of multifaceted significance. In the world of numerology, it represents balance, harmony, and the integration of opposites. Within mathematics, it stands as a composite number.",
     "button": "Add To Cart",
-    "attributes": {
-      "color": "Red",
-      "sizes": ["S", "M", "L"],
-      "condition": "New",
-      "brand": "Fashion",
-      "availability": "Instock"
-    }
+    "leftcount": "20",
+    "color": ["emerald", "teal", "rose"],
+    "sizes": ["S", "M", "L"],
+    "condition": "New",
+    "brand": "Fashion"
   }
 ]

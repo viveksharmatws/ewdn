@@ -8,6 +8,7 @@ import person from "../public/images/person.svg";
 import heart from "../public/images/heart.svg";
 import bag from "../public/images/bag.svg";
 import { AlignJustify } from "lucide-react";
+import { useTranslation } from "next-i18next";
 import {
   DropdownMenuContent,
   DropdownMenu,
@@ -112,9 +113,12 @@ const Navbar = () => {
                         />
                       </div>
 
-                      <Link href="/" className="cursor-pointer">
+                      <button
+                        onClick={() => changeLanguage("en")}
+                        className="cursor-pointer"
+                      >
                         <p>English</p>
-                      </Link>
+                      </button>
                     </div>
                   </SelectItem>
                   <SelectItem className="text-[#222]" value="dark">
@@ -128,9 +132,12 @@ const Navbar = () => {
                         />
                       </div>
 
-                      <Link href="/" className="cursor-pointer">
-                        <p>Hindi</p>
-                      </Link>
+                      <button
+                        onClick={() => changeLanguage("es")}
+                        className="cursor-pointer"
+                      >
+                        <p>Spanish</p>
+                      </button>
                     </div>
                   </SelectItem>
                   <SelectItem className="text-[#222]" value="system">
@@ -144,9 +151,12 @@ const Navbar = () => {
                         />
                       </div>
 
-                      <Link href="" className="cursor-pointer">
-                        <p>Marathi</p>
-                      </Link>
+                      <button
+                        onClick={() => changeLanguage("fr")}
+                        className="cursor-pointer"
+                      >
+                        <p>French</p>
+                      </button>
                     </div>
                   </SelectItem>
                 </SelectContent>
@@ -246,7 +256,10 @@ const Navbar = () => {
                 />
               </Link>
 
-              <Link href="/cartpage" className="cursor-pointer ">
+              <Link href="/cartpage" className="cursor-pointer relative">
+                <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
+                  <p className="text-white text-[12px] px-1 ">0</p>
+                </div>
                 <Image
                   width={20}
                   height={20}

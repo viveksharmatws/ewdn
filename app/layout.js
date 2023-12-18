@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Jost } from "next/font/google";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 const Josty = Jost({
   subsets: ["latin"],
 });
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <div>
           <Navbar />
           {children}
+          <Toaster />
           <Footer />
         </div>
       </body>

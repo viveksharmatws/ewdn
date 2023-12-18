@@ -1,5 +1,8 @@
 "use client";
 import React from "react";
+// Example import in a component
+import { useTranslation } from "next-i18next";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,6 +25,7 @@ import Image from "next/image";
 import Link from "@/node_modules/next/link";
 
 const NavigationMenubar = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center  max-sm:flex-col  relative  z-10">
       <div>
@@ -159,26 +163,26 @@ const NavigationMenubar = () => {
             href="/accessories"
             className="text-[18px] leading-[22px] text-[#000000] hover:text-[#4e4e4e]  tracking-[0.5px] font-medium"
           >
-            Accessories
+            {t("Accessories")}
           </Link>
           <Link
             href="/contact"
             className="text-[18px]  leading-[22px] text-[#000000] hover:text-[#4e4e4e] tracking-[0.5px] font-medium"
           >
-            Contact Us
+            {t("Contact Us")}
           </Link>
           <Link
             href="/aboutus"
             className="text-[18px] text-[#000000] hover:text-[#4e4e4e] leading-[22px] tracking-[0.5px] font-medium"
           >
-            About Us
+            {t("About Us")}
           </Link>
         </ul>
         <ul className="px-4">
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger className="text-[18px]  leading-[22px]  tracking-[0.5px] font-medium text-[#000000] hover:text-[#4e4e4e] xl:px-[10px] mb-0 pb-0">
-                All Brands
+                {t("All Brands")}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
                 <DropdownMenuItem>Louis Vuitton</DropdownMenuItem>
@@ -198,7 +202,7 @@ const NavigationMenubar = () => {
             <div className="">
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-[18px] font-medium pl-2 text-[#000000] hover:text-[#4e4e4e] ">
-                  More
+                  {t(" More")}
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white">
                   <DropdownMenuLabel className="px-2 py-1 font-normal text-[15px] ">

@@ -4,8 +4,9 @@ import Image from "next/image";
 import Discountsection from "./Discountsection";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Dialogofproduct from "./Dialoguefproduct";
-import Link from "@/node_modules/next/link";
+
 import { IoStar } from "react-icons/io5";
+import Link from "next/link";
 
 const Gridproducts = () => {
   return (
@@ -80,7 +81,7 @@ const Gridproducts = () => {
 
                   <div className="opacity-100">
                     <span className="bg-[#E22D2D] px-[7px] py-[3px] text-[11px] font-medium capitalize leading-[15px] tracking-[0.5px] text-white  duration-300 group-hover:translate-x-3 shadow-sm shadow-slate-500 ">
-                      -12%
+                      -{product.discount}%
                     </span>
                   </div>
                 </div>
@@ -91,8 +92,8 @@ const Gridproducts = () => {
                   {product.subheading}
                 </h3>
                 <Link
-                  href="/products"
                   className=" text-[20px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1"
+                  href={`/products/${product.id}`}
                 >
                   {product.heading}
                 </Link>

@@ -66,6 +66,7 @@ const page = () => {
                     </span>
                     <Input
                       type="number"
+                      min="1"
                       placeholder="1"
                       className=" max-w-[78px]  appearance-none  text-[20px] outline-none text-black  min-h-[40px]"
                     />
