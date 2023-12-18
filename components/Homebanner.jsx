@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
@@ -8,6 +8,20 @@ import blackbanner from "../public/images/blackgirlhomebanner.jpg";
 import Link from "@/node_modules/next/link";
 
 const Homebanner = () => {
+  useEffect(() => {
+    // Disable right-click on the entire document
+    const disableRightClick = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener("contextmenu", disableRightClick);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []); // Empty dependency array to run the effect only once on mount
+
   return (
     <div>
       <div className="home-carousal z-0  ">

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import message from "../public/images/message.svg";
 import globe from "../public/images/globe.svg";
 import america from "../public/images/america.jpg";
@@ -8,7 +8,7 @@ import person from "../public/images/person.svg";
 import heart from "../public/images/heart.svg";
 import bag from "../public/images/bag.svg";
 import { AlignJustify } from "lucide-react";
-import { useTranslation } from "next-i18next";
+
 import {
   DropdownMenuContent,
   DropdownMenu,
@@ -22,16 +22,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 import logo from "../public/images/logoecommerce.jpg";
 import search from "../public/images/search.svg";
 import NavigationMenubar from "./NavigationMenu";
-import { SheetContent, SheetTrigger, Sheet } from "./ui/sheet";
 import Sidebar from "../components/Sidebar";
-import Sidebarsm from "../components/Sidebar";
 import Link from "@/node_modules/next/link";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
+  const [products, setproducts] = useState(false);
   return (
     <>
       <nav className="bg-[#222222] md:block hidden   ">
@@ -152,6 +160,7 @@ const Navbar = () => {
                       </div>
 
                       <button
+                        ton
                         onClick={() => changeLanguage("fr")}
                         className="cursor-pointer"
                       >
@@ -256,18 +265,61 @@ const Navbar = () => {
                 />
               </Link>
 
-              <Link href="/cartpage" className="cursor-pointer relative">
-                <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
-                  <p className="text-white text-[12px] px-1 ">0</p>
-                </div>
-                <Image
-                  width={20}
-                  height={20}
-                  src={bag}
-                  alt="bag"
-                  className="max-sm:h-[18px] max-sm:w-[18px] "
-                />
-              </Link>
+              <Sheet className="">
+                <SheetTrigger asChild>
+                  <div className="relative cursor-pointer  ">
+                    <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
+                      <p className="text-white text-[12px] px-1 ">0</p>
+                    </div>
+                    <Image
+                      width={20}
+                      height={20}
+                      src={bag}
+                      alt="bag"
+                      className="max-sm:h-[18px] max-sm:w-[18px] "
+                    />
+                  </div>
+                </SheetTrigger>
+                <SheetContent side="right" className="bg-white">
+                  <div className=" flex-col">
+                    <div>
+                      <h2 className="text-2xl text-[#666] font-semibold border-b-2 pb-5">
+                        Shoping Cart
+                      </h2>
+                    </div>
+                    {products ? (
+                      <></>
+                    ) : (
+                      <div className="border-red-700   flex-col">
+                        <div>
+                          <div className="py-10">
+                            <p className="text-center text-[15px]">
+                              There are no more items in your cart
+                            </p>
+                          </div>
+                          <div>
+                            <Image
+                              src="/images/cart.jpg"
+                              alt="cart"
+                              width="400"
+                              height="400"
+                            />
+                          </div>
+                          <div className="flex items-center justify-center">
+                            <Link
+                              href="/bloggrid"
+                              variant="secondary"
+                              className=" bg-[#222] text-[20px] font-medium py-[10px] px-[20px] focus:none outline-none text-white"
+                            >
+                              Explore Products
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </SheetContent>
+              </Sheet>
 
               <p className="text-black lg:block hidden ">$0.00</p>
             </div>

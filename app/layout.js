@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={Josty.className}>
-        <div>
+        <div className="select-none pointer-events-auto">
           <Navbar />
           {children}
           <Toaster />
