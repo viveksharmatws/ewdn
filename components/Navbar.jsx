@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import message from "../public/images/message.svg";
 import globe from "../public/images/globe.svg";
 import america from "../public/images/america.jpg";
@@ -8,6 +8,20 @@ import person from "../public/images/person.svg";
 import heart from "../public/images/heart.svg";
 import bag from "../public/images/bag.svg";
 import { AlignJustify } from "lucide-react";
+import { Trash } from "lucide-react";
+
+// const { toast } = useToast();
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 import {
   DropdownMenuContent,
@@ -22,24 +36,52 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import logo from "../public/images/logoecommerce.jpg";
 import search from "../public/images/search.svg";
 import NavigationMenubar from "./NavigationMenu";
 import Sidebar from "../components/Sidebar";
 import Link from "@/node_modules/next/link";
-import { Button } from "./ui/button";
 
 const Navbar = () => {
-  const [products, setproducts] = useState(false);
+  const [products, setProduct] = useState(null);
+  const [wishlist, setWishlist] = useState(null);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart"));
+
+    if (storedCart && Array.isArray(storedCart)) {
+      setProduct(storedCart);
+    } else {
+      setProduct([]);
+    }
+
+    const storedWishlist = JSON.parse(localStorage.getItem("wishlist"));
+
+    if (storedWishlist && Array.isArray(storedWishlist)) {
+      setWishlist(storedWishlist);
+    } else {
+      setWishlist([]);
+    }
+  }, []);
+
+  const pricesArray = [];
+
+  if (products && Array.isArray(products)) {
+    products.forEach((item) => {
+      const price = Number(item.price);
+      if (!isNaN(price)) {
+        pricesArray.push(price);
+      }
+    });
+  }
+
+  const sumOfPrices = pricesArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
   return (
     <>
       <nav className="bg-[#222222] md:block hidden   ">
@@ -47,7 +89,7 @@ const Navbar = () => {
           <div className="flex gap-5">
             <ul className="flex items-center gap-[9px]">
               <li className="text-white shrink-0 ">
-                <Link href="/ " className="">
+                <Link href="/" className="">
                   <Image
                     src={message}
                     alt="message1"
@@ -207,7 +249,13 @@ const Navbar = () => {
                 href="/"
                 className="sm:w-[115px] sm:h-[30px]  max-sm:w-[75px] max-sm:h-[20px] shrink-0"
               >
-                <Image src={logo} alt="logo" className=" w-full" />
+                <Image
+                  src={logo}
+                  alt="logo"
+                  className=" w-full"
+                  width={115}
+                  height={30}
+                />
               </Link>
             </div>
             <div className="lg:block hidden ">
@@ -255,7 +303,12 @@ const Navbar = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link href="" className="cursor-pointer ">
+              <Link href="/wishlist" className="cursor-pointer  relative">
+                <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
+                  <p className="text-white text-[12px] px-1 ">
+                    {wishlist?.length || 0}
+                  </p>
+                </div>
                 <Image
                   width={20}
                   height={20}
@@ -269,7 +322,9 @@ const Navbar = () => {
                 <SheetTrigger asChild>
                   <div className="relative cursor-pointer  ">
                     <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
-                      <p className="text-white text-[12px] px-1 ">0</p>
+                      <p className="text-white text-[12px] px-1 ">
+                        {products?.length || 0}
+                      </p>
                     </div>
                     <Image
                       width={20}
@@ -280,15 +335,149 @@ const Navbar = () => {
                     />
                   </div>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-white">
+                <SheetContent side="right" className="bg-white overflow-y-auto">
                   <div className=" flex-col">
                     <div>
-                      <h2 className="text-2xl text-[#666] font-semibold border-b-2 pb-5">
-                        Shoping Cart
+                      <h2 className="text-xl text-[#666] font-semibold border-b-2 pb-5">
+                        Shopping Cart
                       </h2>
                     </div>
-                    {products ? (
-                      <></>
+                    {products?.length > 0 ? (
+                      <>
+                        {products?.map((item, index) => (
+                          <>
+                            <div className="overflow-y-auto">
+                              <div className="flex  pt-[10px] gap-[10px] ">
+                                <div className="shrink-0">
+                                  <Image
+                                    src={`/images${item.all_images[1]}`}
+                                    alt=""
+                                    width={100}
+                                    height={100}
+                                    className=""
+                                  />
+                                </div>
+                                <div className="flex-col shrink-1">
+                                  <div>
+                                    <h1
+                                      className="text-[18px]  tracking-[0.5px] line-clamp-1"
+                                      key={index}
+                                    >
+                                      {item?.heading}
+                                    </h1>
+                                  </div>
+                                  <div className="flex items-center ">
+                                    <h1
+                                      className="text-[18px] tracking-[0.5px]"
+                                      key={index}
+                                    >
+                                      1 X {item?.price}
+                                    </h1>
+
+                                    <span className=" px-1 text-[#ff0000] text-[18px] font-medium">
+                                      ${item?.product?.price}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="px-[10px] pt-[8px] cursor-pointer  ">
+                                  <AlertDialog>
+                                    <AlertDialogTrigger>
+                                      <Trash
+                                        size={20}
+                                        className="hover:fill-[#000000] "
+                                      />
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent className="bg-white">
+                                      <AlertDialogHeader>
+                                        <AlertDialogTitle>
+                                          Are you absolutely sure?
+                                        </AlertDialogTitle>
+                                        <AlertDialogDescription>
+                                          This action cannot be undone. This
+                                          will permanently delete your account
+                                          and remove your data from our servers.
+                                        </AlertDialogDescription>
+                                      </AlertDialogHeader>
+                                      <AlertDialogFooter>
+                                        <AlertDialogCancel className="cursor-pointer">
+                                          Cancel
+                                        </AlertDialogCancel>
+                                        <AlertDialogAction className="bg-red-600 text-white cursor-pointer">
+                                          Continue
+                                        </AlertDialogAction>
+                                      </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                  </AlertDialog>
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        ))}
+
+                        <div className="border-gray-200 border-b mt-2 border-t">
+                          <div className="p-[20px]  ">
+                            <div className="flex  justify-between mt-1">
+                              <div>
+                                <p className="text-[18px] tracking-[0.5px] leading-[26px] font-normal">
+                                  {products?.length} items
+                                </p>
+                              </div>
+                              <div>
+                                <p className="text-[18px] font-semibold text-[#ff0000]">
+                                  ${sumOfPrices}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex  justify-between mt-1">
+                              <div>
+                                <p className="text-[18px] tracking-[0.5px] leading-[26px] font-normal">
+                                  Shipping
+                                </p>
+                              </div>
+                              <div>
+                                <p className="text-[18px] font-semibold text-[#ff0000]">
+                                  $7.00
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-[20px]  ">
+                          <div className="flex  justify-between mt-1">
+                            <div>
+                              <p className="text-[18px] tracking-[0.5px] leading-[26px] font-normal">
+                                Total (tax excl.)
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-[18px] font-semibold text-[#ff0000]">
+                                $351.00
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex  justify-between mt-1">
+                            <div>
+                              <p className="text-[18px] tracking-[0.5px] leading-[26px] font-normal">
+                                Total (tax incl.)
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-[18px] font-semibold text-[#ff0000]">
+                                ${sumOfPrices}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex gap-5 w-full">
+                          <div className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center">
+                            View Cart
+                          </div>
+
+                          <div className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center">
+                            Checkout
+                          </div>
+                        </div>
+                      </>
                     ) : (
                       <div className="border-red-700   flex-col">
                         <div>
@@ -321,7 +510,7 @@ const Navbar = () => {
                 </SheetContent>
               </Sheet>
 
-              <p className="text-black lg:block hidden ">$0.00</p>
+              <p className="text-black lg:block hidden ">$0.00 </p>
             </div>
           </div>
         </div>

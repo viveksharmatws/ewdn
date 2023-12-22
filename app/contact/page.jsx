@@ -5,7 +5,6 @@ import Image from "@/node_modules/next/image";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
@@ -20,11 +19,10 @@ const page = () => {
           <Breadcrumb Title="Contact Us" />
         </div>
         <div className="lg:flex max-lg:flex-col pb-[20px] gap-5 w-full max-w-[1430px] sm:px-[10px] mx-auto sm:pt-[5px]">
-          <div className="xl:max-w-[250px] px-[15px] flex-col shrink-0">
+          <div className="xl:max-w-[250px]   px-[15px] flex-col shrink-0">
             <h1 className=" pb-[10px] text-[22px] font-medium">
               Store Information
             </h1>
-
             <div className="pt-2 pb-4   w-full">
               <li className="mb-[3px]  leading-[33px]  border-b flex items-start ">
                 <Image
@@ -75,7 +73,7 @@ const page = () => {
               </li>
             </div>
           </div>
-          <div className="   xl:max-w-[1000px] w-full lg:p-5   border mb-10">
+          <div className=" w-full  xl:max-w-[1000px]  lg:p-5   border mb-10">
             <div className="md:p-4 p-2">
               <div className="flex-col ">
                 <div className="flex mb-4 max-sm:flex-col">

@@ -7,6 +7,7 @@ import { Trash } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Security from "@/elements/securty";
 import Link from "@/node_modules/next/link";
+
 const page = () => {
   return (
     <>
@@ -222,7 +223,7 @@ const page = () => {
                   Para="(edit with the Customer Reassurance module)"
                   icon="Return"
                 />
-              </div>{" "}
+              </div>
               <div>
                 <Security
                   Title="Return policy"

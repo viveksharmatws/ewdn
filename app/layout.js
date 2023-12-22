@@ -3,12 +3,13 @@ import "./globals.css";
 import { Jost } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+
 const Josty = Jost({
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Ecommerce Webiste",
+  title: "Ecommerce Website",
   description: "Developed by Yashpreet Rana",
 };
 

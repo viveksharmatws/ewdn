@@ -94,7 +94,7 @@ const page = () => {
     const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     const updatedCart = [
       ...existingCartItems,
-      { product: product, inputValue: inputValue },
+      { ...product, inputValue: inputValue },
     ];
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };

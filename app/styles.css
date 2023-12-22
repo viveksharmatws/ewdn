@@ -125,3 +125,12 @@
 
 .password_btn_hide {
 }
+
+.fade-in-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}

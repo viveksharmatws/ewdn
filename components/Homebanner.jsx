@@ -8,28 +8,14 @@ import blackbanner from "../public/images/blackgirlhomebanner.jpg";
 import Link from "@/node_modules/next/link";
 
 const Homebanner = () => {
-  useEffect(() => {
-    // Disable right-click on the entire document
-    const disableRightClick = (e) => {
-      e.preventDefault();
-    };
-
-    document.addEventListener("contextmenu", disableRightClick);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.removeEventListener("contextmenu", disableRightClick);
-    };
-  }, []); // Empty dependency array to run the effect only once on mount
-
   return (
     <div>
       <div className="home-carousal z-0  ">
         <Carousel
           showDots={true}
-          autoPlay={true}
           interval="500"
-          infinite={true}
+          showArrows={true}
+          showThumbs="false"
         >
           <div className="relative leading-2 ">
             <div>
@@ -51,7 +37,7 @@ const Homebanner = () => {
               </h3>
               <Link
                 href="/products"
-                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px]   max-sm:p-0 hover:bg-white  xl:text-[17px] sm:mt-[20px] sm:text-white hover:text-black  transition duration-1000"
+                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px]   max-sm:p-0 hover:bg-white  xl:text-[17px] sm:mt-[20px] sm:text-white hover:text-black cursor-pointer  transition duration-1000"
               >
                 Shop Now
               </Link>
@@ -77,7 +63,7 @@ const Homebanner = () => {
               </h3>
               <Link
                 href="/products"
-                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0  xl:text-[17px] sm:mt-[20px] transition duration-1000"
+                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0 cursor-pointer   xl:text-[17px] sm:mt-[20px] transition duration-1000"
               >
                 Shop Now
               </Link>

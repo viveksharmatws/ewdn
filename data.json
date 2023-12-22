@@ -23,7 +23,7 @@
   {
     "id": "2",
     "all_images": ["/b5.jpg", "/g1.jpg"],
-    "price": "149",
+    "price": "49",
     "heading": "Cherokee Boy's Regular Shirt",
     "subheading": "Catwalk Clothing",
     "discount": "5",
@@ -40,7 +40,7 @@
   {
     "id": "3",
     "all_images": ["/g1.jpg", "/b3.jpg"],
-    "price": "149",
+    "price": "14",
     "heading": "Black Denim Trucker Jacket",
     "discount": "10",
     "leftcount": "15",
@@ -57,7 +57,7 @@
   {
     "id": "4",
     "all_images": ["/b3.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "4",
     "discount": "20",
     "leftcount": "70",
 
@@ -74,7 +74,7 @@
   {
     "id": "5",
     "all_images": ["/b3.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "9",
     "discount": "35",
     "leftcount": "100",
     "heading": "Classic Jacket In White",
@@ -90,7 +90,7 @@
   {
     "id": "6",
     "all_images": ["/b5.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "15",
     "discount": "60",
     "leftcount": "100",
     "heading": "Classic Jacket In White",
@@ -106,7 +106,7 @@
   {
     "id": "7",
     "all_images": ["/b6.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "12",
     "discount": "45",
     "leftcount": "100",
     "heading": "Classic Jacket In White",
@@ -175,7 +175,7 @@
   {
     "id": "11",
     "all_images": ["/g3.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "40",
     "discount": "25",
     "leftcount": "20",
     "heading": "Classic Jacket In White",
@@ -191,7 +191,7 @@
   {
     "id": "12",
     "all_images": ["/b3.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "60",
     "discount": "15",
     "leftcount": "90",
     "heading": "Classic Jacket In White",
@@ -207,7 +207,7 @@
   {
     "id": "13",
     "all_images": ["/b6.jpg", "/b4.jpg"],
-    "price": "149",
+    "price": "200",
     "discount": "20",
     "heading": "Classic Jacket In White",
     "subheading": "Jelly Kelly",

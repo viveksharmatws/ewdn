@@ -1,14 +1,27 @@
+"use client";
 import React from "react";
 import jsonData from "../data.json";
 import Image from "next/image";
 import Discountsection from "./Discountsection";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Dialogofproduct from "./Dialoguefproduct";
-
 import { IoStar } from "react-icons/io5";
 import Link from "next/link";
+import { useToast } from "./ui/use-toast";
 
 const Gridproducts = () => {
+  const { toast } = useToast();
+  var currentDate = new Date();
+  var formattedDate = currentDate.toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+
   return (
     <div className="mx-auto max-w-[1430px] px-[15px] max-py-[30px]">
       <Dialog>
@@ -33,7 +46,32 @@ const Gridproducts = () => {
                   />
                 )}
                 <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
-                  <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
+                  <div
+                    onClick={() => {
+                      const productTitle = "Product is added to wishlist";
+                      const wishlistItem = {
+                        title: productTitle,
+                        formattedDate,
+                        id: product.id,
+                      };
+
+                      const existingWishlist =
+                        JSON.parse(localStorage.getItem("wishlist")) || [];
+                      existingWishlist.push(wishlistItem);
+                      localStorage.setItem(
+                        "wishlist",
+                        JSON.stringify(existingWishlist)
+                      );
+
+                      // Display toast notification
+                      toast({
+                        title: "This item has been added to the wishlist",
+                        description: formattedDate,
+                        id: product.id,
+                      });
+                    }}
+                    className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   "
+                  >
                     <Image
                       src="../images/heart.svg"
                       alt=""
