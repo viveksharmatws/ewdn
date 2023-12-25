@@ -28,8 +28,8 @@ const Gridproducts = () => {
         <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px] place-items-center sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
           {jsonData.map((product) => (
             <Link
-              href={`/products/${product.id}`}
               key={product.index}
+              href={`/products/${product.id}`}
               className="w-full"
             >
               <div className="group relative duration-1000 overflow-hidden">
@@ -49,72 +49,74 @@ const Gridproducts = () => {
                     className="opacity-0 w-full duration-1000 group-hover:opacity-100 absolute left-0 top-0"
                   />
                 )}
-                <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
-                  <div
-                    onClick={() => {
-                      const productTitle = "Product is added to wishlist";
-                      const wishlistItem = {
-                        title: productTitle,
-                        formattedDate,
-                        id: product.id,
-                      };
+                <div href="#">
+                  <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
+                    <div
+                      onClick={() => {
+                        const productTitle = "Product is added to wishlist";
+                        const wishlistItem = {
+                          title: productTitle,
+                          formattedDate,
+                          id: product.id,
+                        };
 
-                      const existingWishlist =
-                        JSON.parse(localStorage.getItem("wishlist")) || [];
+                        const existingWishlist =
+                          JSON.parse(localStorage.getItem("wishlist")) || [];
 
-                      existingWishlist.push(wishlistItem);
+                        existingWishlist.push(wishlistItem);
 
-                      localStorage.setItem(
-                        "wishlist",
-                        JSON.stringify(existingWishlist)
-                      );
+                        localStorage.setItem(
+                          "wishlist",
+                          JSON.stringify(existingWishlist)
+                        );
 
-                      // Display toast notification
-                      toast({
-                        title: "This item has been added to the wishlist",
-                        description: formattedDate,
-                        id: product.id,
-                      });
-                      setTimeout(() => {
-                        window.location.reload();
-                      }, 3000);
-                    }}
-                    className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   "
-                  >
-                    <Image
-                      src="../images/heart.svg"
-                      alt=""
-                      width={17}
-                      height={17}
-                      className="brightness-0 invert "
-                    />
-                  </div>
-                  <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
-                    <Image
-                      src="../images/compare.svg"
-                      alt=""
-                      width={17}
-                      height={17}
-                      className="brightness-0 invert"
-                    />
-                  </div>
-                  <DialogTrigger className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
-                    <Image
-                      src="../images/wide.svg"
-                      alt=""
-                      width={17}
-                      height={17}
-                      className="brightness-0 invert"
-                    />
-                  </DialogTrigger>
-                  <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
-                    <Image
-                      src="../images/addtoviewpage.svg"
-                      alt=""
-                      width={17}
-                      height={17}
-                      className="brightness-0 invert max-w-[17px] w-full"
-                    />
+                        // Display toast notification
+                        toast({
+                          title: "This item has been added to the wishlist",
+                          description: formattedDate,
+                          id: product.id,
+                        });
+                        setTimeout(() => {
+                          window.location.reload();
+                        }, 3000);
+                      }}
+                      className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   "
+                    >
+                      <Image
+                        src="../images/heart.svg"
+                        alt=""
+                        width={17}
+                        height={17}
+                        className="brightness-0 invert "
+                      />
+                    </div>
+                    <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                      <Image
+                        src="../images/compare.svg"
+                        alt=""
+                        width={17}
+                        height={17}
+                        className="brightness-0 invert"
+                      />
+                    </div>
+                    <DialogTrigger className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                      <Image
+                        src="../images/wide.svg"
+                        alt=""
+                        width={17}
+                        height={17}
+                        className="brightness-0 invert"
+                      />
+                    </DialogTrigger>
+                    <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
+                      <Image
+                        src="../images/addtoviewpage.svg"
+                        alt=""
+                        width={17}
+                        height={17}
+                        className="brightness-0 invert max-w-[17px] w-full"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="absolute left-[-2px] top-[8px] flex flex-col gap-[2px] ">
@@ -155,6 +157,7 @@ const Gridproducts = () => {
             </Link>
           ))}
         </div>
+
         <div className="flex items-center justify-center shrink-0 mb-[10px] p-4 mt-5">
           <Link
             href="/productdetailblog"

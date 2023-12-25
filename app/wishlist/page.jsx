@@ -9,7 +9,7 @@ import { AlignLeft } from "lucide-react";
 import { Home } from "lucide-react";
 import { Trash } from "lucide-react";
 import Image from "@/node_modules/next/image";
-
+import jsonData from "../../data.json";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,6 +25,7 @@ import {
 const page = () => {
   const [wishContent, setContent] = useState(null);
   const [visible, setVisible] = useState(false);
+  const [productdetail, setproductdetail] = useState(null);
 
   useEffect(() => {
     const storedWishlist = JSON.parse(localStorage.getItem("wishlist"));
@@ -33,6 +34,11 @@ const page = () => {
 
   const showsection = () => {
     setVisible((prev) => !prev);
+
+    const found = jsonData.filter((element) =>
+      wishContent.map((x) => x.id).includes(element.id)
+    );
+    setproductdetail(found);
   };
 
   const clearcart = () => {
@@ -43,9 +49,15 @@ const page = () => {
   };
 
   const clearItemfromcart = (itemId) => {
-    const updatedWishContent = wishContent.filter((item) => item.id !== itemId);
+    const updatedWishContent = wishContent.filter(
+      (product) => product.id !== itemId
+    );
     setContent(updatedWishContent);
     localStorage.setItem("wishlist", JSON.stringify(updatedWishContent));
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   return (
@@ -192,7 +204,10 @@ const page = () => {
                   </div>
                 </div>
                 <div className="  py-10 space-x-5 flex">
-                  <Link href="/myaccount" className="flex gap-1">
+                  <Link
+                    href="/myaccount"
+                    className="flex gap-1 cursor-pointer "
+                  >
                     <ChevronLeft />
                     <span className="text-[#222] sm:text-[18px] text-[16px]  leading-[26px] tracking-[0.5px]">
                       Back to your account
@@ -205,73 +220,74 @@ const page = () => {
                     </span>
                   </Link>
                 </div>
-                {visible ? (
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-10">
-                    {wishContent &&
-                      wishContent.map((item) => (
-                        <div className="  flex flex-col px-[20px] pt-[20px] pb-[30px] border-[#e5e5e5] bg-[#F0F0F0] rounded-2xl max-w-[400px] mb-10">
-                          <Image
-                            src="/images/b4.jpg"
-                            width={400}
-                            height={400}
-                          />
 
-                          <Link
-                            href={`/products/${item.id}`}
-                            className=" pt-3 text-[16px] line-clamp-2 text-[#666666] "
-                          >
-                            {item.id}
-                          </Link>
-                          <div className="flex  items-center justify-between">
-                            <div className=" pt-2 text-[14px] text-[#000000]">
-                              {wishContent && wishContent.length > 0 ? (
-                                wishContent[wishContent.length - 1]
-                                  .formattedDate
-                              ) : (
-                                <span>No items in wishlist</span>
-                              )}
-                            </div>
-                          </div>
-                          <div className=" flex items-center ">
-                            <AlertDialog>
-                              <AlertDialogTrigger>
-                                <Trash
-                                  size={20}
-                                  className="hover:fill-[#000000] "
-                                />
-                              </AlertDialogTrigger>
-                              <AlertDialogContent className="bg-white">
-                                <AlertDialogHeader>
-                                  <AlertDialogTitle>
-                                    Are you absolutely sure?
-                                  </AlertDialogTitle>
-                                  <AlertDialogDescription>
-                                    This will remove this item from your
-                                    wishlist.
-                                  </AlertDialogDescription>
-                                </AlertDialogHeader>
-                                <AlertDialogFooter>
-                                  <AlertDialogCancel className="cursor-pointer">
-                                    Cancel
-                                  </AlertDialogCancel>
-                                  <AlertDialogAction
-                                    onClick={() => {
-                                      clearItemfromcart(item.id);
-                                    }}
-                                    className="bg-red-600 text-white cursor-pointer"
-                                  >
-                                    Continue
-                                  </AlertDialogAction>
-                                </AlertDialogFooter>
-                              </AlertDialogContent>
-                            </AlertDialog>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-[10px]">
+                  {visible &&
+                    productdetail &&
+                    productdetail.length > 0 &&
+                    productdetail.map((product) => (
+                      <div className="  flex flex-col px-[20px] pt-[20px] pb-[30px] border-[#e5e5e5] bg-[#F0F0F0] rounded-2xl max-w-[300px] w-full mb-10">
+                        <Image
+                          src={`/images${product.all_images[0]}`}
+                          width={400}
+                          height={400}
+                        />
+
+                        <Link
+                          href={`/products/${product.id}`}
+                          className=" pt-3 text-[16px] line-clamp-2 text-[#666666] cursor-pointer "
+                        >
+                          {product.heading}
+                        </Link>
+                        <p className=" text-[18px] font-bold text-[#666666] line-clamp-2 uppercase cursor-pointer ">
+                          {product.subheading}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="pt-2 text-[14px] text-[#222]">
+                            {wishContent && wishContent.length > 0 ? (
+                              wishContent.map((x) => <p key={x.id}>{x.name}</p>)
+                            ) : (
+                              <span>No items in wishlist</span>
+                            )}
                           </div>
                         </div>
-                      ))}
-                  </div>
-                ) : (
-                  ""
-                )}
+                        <div className=" flex items-center ">
+                          <AlertDialog>
+                            <AlertDialogTrigger>
+                              <Trash
+                                size={20}
+                                className="hover:fill-[#000000] "
+                              />
+                            </AlertDialogTrigger>
+                            <AlertDialogContent className="bg-white">
+                              <AlertDialogHeader>
+                                <AlertDialogTitle>
+                                  Are you absolutely sure?
+                                </AlertDialogTitle>
+                                <AlertDialogDescription>
+                                  This will remove this product from your
+                                  wishlist.
+                                </AlertDialogDescription>
+                              </AlertDialogHeader>
+                              <AlertDialogFooter>
+                                <AlertDialogCancel className="cursor-pointer">
+                                  Cancel
+                                </AlertDialogCancel>
+                                <AlertDialogAction
+                                  onClick={() => {
+                                    clearItemfromcart(product.id);
+                                  }}
+                                  className="bg-red-600 text-white cursor-pointer"
+                                >
+                                  Continue
+                                </AlertDialogAction>
+                              </AlertDialogFooter>
+                            </AlertDialogContent>
+                          </AlertDialog>
+                        </div>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           </div>
