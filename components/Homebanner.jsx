@@ -22,7 +22,7 @@ const Homebanner = () => {
               <Image src={homebanner} alt="home banner girl" className="z-0" />
             </div>
 
-            <div className="absolute top-[20%] max-[400px]:top-[5%] sm:top-[5%] md:top-[12%] xl:top-[25%] left-[5%] text-left  ">
+            <div className="absolute top-[20%] sm:top-[8%] md:top-[12%] xl:top-[25%] left-[5%] text-left  ">
               <h4 className=" xl:top-[143px]  md:text-[22px]  font-normal sm:text-[20px]  md:mb-[12px] mb-[5px]  text-[10px] tracking-[0.3px] ">
                 100% Original Products
               </h4>
@@ -35,12 +35,14 @@ const Homebanner = () => {
                   $59.00
                 </span>
               </h3>
-              <Link
-                href="/products"
-                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px]   max-sm:p-0 hover:bg-white  xl:text-[17px] sm:mt-[20px] sm:text-white hover:text-black cursor-pointer  transition duration-1000"
-              >
-                Shop Now
-              </Link>
+              <div className="sm:mt-10">
+                <Link
+                  href="/products"
+                  className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px]   max-sm:p-0 hover:bg-white  xl:text-[17px] sm:mt-[20px] sm:text-white hover:text-black cursor-pointer  transition duration-1000"
+                >
+                  Shop Now
+                </Link>
+              </div>
             </div>
           </div>
           <div className="relative leading-2 ">
@@ -61,12 +63,14 @@ const Homebanner = () => {
                   $69.00
                 </span>
               </h3>
-              <Link
-                href="/products"
-                className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0 cursor-pointer   xl:text-[17px] sm:mt-[20px] transition duration-1000"
-              >
-                Shop Now
-              </Link>
+              <div className="sm:mt-10">
+                <Link
+                  href="/products"
+                  className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0 cursor-pointer   xl:text-[17px] sm:mt-[20px] transition duration-1000 xl:mt-40"
+                >
+                  Shop Now
+                </Link>
+              </div>
             </div>
           </div>
         </Carousel>

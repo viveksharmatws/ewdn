@@ -436,7 +436,7 @@ const page = () => {
             <h2 className="sm:text-[45px] max-sm:text-[30px] font-normal sm:leading-[50px] leading-[30px]">
               10 other products in the same category:
             </h2>
-            <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px] place-items-center sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
+            <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px]  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
               {jsonData.map((product) => (
                 <div key={product.index} className="">
                   <div className="group relative duration-1000 overflow-hidden">

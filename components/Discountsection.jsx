@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 const Discountsection = () => {
   return (
     <div className="mx-auto max-w-[1400px] pt-[40px]  sm:pt-[90px]">
-      <div className="mx-auto grid grid-cols-1 xl:place-items-start place-items-center gap-5 w-full  lg:grid-cols-2  xl:grid-cols-3">
+      <div className="mx-auto grid grid-cols-1  place-items-center gap-5 w-full  lg:grid-cols-2  xl:grid-cols-3">
         {discount.map((item) => (
           <div key={item.id} className="relative  ">
             <div className="overflow-hidden">

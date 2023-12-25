@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import Link from "@/node_modules/next/link";
 import React, { useEffect, useState } from "react";
 import { ChevronLeft } from "lucide-react";
-import { Equal } from "lucide-react";
+import { AlignLeft } from "lucide-react";
 import { Home } from "lucide-react";
 import { Trash } from "lucide-react";
 import Image from "@/node_modules/next/image";
@@ -23,41 +23,28 @@ import {
 } from "@/components/ui/alert-dialog";
 
 const page = () => {
-  const [wishlistContent, setWishContent] = useState(null);
+  const [wishContent, setContent] = useState(null);
   const [products, setProduct] = useState(null);
-
-  const [isSectionVisible, setSectionVisible] = useState(false);
-  const myau = () => {
-    setSectionVisible((prev) => !prev);
-  };
 
   useEffect(() => {
     const storedWishlist = JSON.parse(localStorage.getItem("wishlist"));
-    if (storedWishlist && Array.isArray(storedWishlist)) {
-      setWishContent(storedWishlist);
-    }
+    setContent(storedWishlist);
   }, []);
 
   const clearcart = () => {
     localStorage.removeItem("wishlist");
   };
 
-  const clearItemfromcart = () => {
-    localStorage.removeItem("");
+  const clearItemfromcart = (itemId) => {
+    // Assuming wishContent is the state holding your wishlist
+    const updatedWishContent = wishContent.filter((item) => item.id !== itemId);
+
+    // Update the state with the new wishlist
+    setContent(updatedWishContent);
+
+    // Update local storage with the new wishlist
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishContent));
   };
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const result = jsonData.find((item) => item.id == wishlistContent.id);
-        setProduct(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchPosts();
-  }, []);
-
   return (
     <>
       <div className="flex-col ">
@@ -121,7 +108,7 @@ const page = () => {
                               scope="col"
                               className="text-sm font-medium     p-3 text-[18px] text-[#666666] text-left"
                             >
-                              Default
+                              Default {wishContent && wishContent.title}
                             </th>
                             <th
                               scope="col"
@@ -134,8 +121,8 @@ const page = () => {
                         <tbody>
                           <tr className="border-[1px] p-3 text-[18px]  border-[#e5e5e5]">
                             <td className="p-3 items-center flex gap-1 text-[#666666] whitespace-nowrap text-sm font-medium   ">
-                              <Equal
-                                onClick={myau}
+                              <AlignLeft
+                                // onClick={myau}
                                 className="cursor-pointer"
                               />
 
@@ -144,14 +131,14 @@ const page = () => {
                               </span>
                             </td>
                             <td className="text-sm     font-light p-3 text-[18px] text-[#666666] whitespace-nowrap">
-                              {wishlistContent && wishlistContent.length}
+                              {wishContent && wishContent.length}
                             </td>
                             <td className="text-sm     font-light p-3 text-[18px] text-[#666666] whitespace-nowrap">
                               2
                             </td>
                             <td className="text-sm     font-light p-3 text-[18px] text-[#666666] whitespace-nowrap">
-                              {wishlistContent && wishlistContent.length > 0 ? (
-                                wishlistContent[wishlistContent.length - 1]
+                              {wishContent && wishContent.length > 0 ? (
+                                wishContent[wishContent.length - 1]
                                   .formattedDate
                               ) : (
                                 <span>No items in wishlist</span>
@@ -213,26 +200,26 @@ const page = () => {
                     </span>
                   </Link>
                 </div>
-                {isSectionVisible ? (
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center">
-                    <div className="  flex flex-col px-[20px] pt-[20px] pb-[30px] border-[#e5e5e5] bg-[#F0F0F0] rounded-2xl max-w-[400px] mb-10">
-                      <Image src="/images/b4.jpg" width={400} height={400} />
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-10">
+                  {wishContent &&
+                    wishContent.map((item) => (
+                      <div className="  flex flex-col px-[20px] pt-[20px] pb-[30px] border-[#e5e5e5] bg-[#F0F0F0] rounded-2xl max-w-[400px] mb-10">
+                        <Image src="/images/b4.jpg" width={400} height={400} />
 
-                      <p className=" pt-3 text-[16px] line-clamp-2 text-[#666666] ">
-                        Embrace the serendipitous nature of creativity as you
-                        explore an array of designs, including abstract motifs,
-                        geometric patterns, floral imprints, and more. These
-                        fabrics are a versatile canvas, perfect for fashion
-                        designers, interior
-                      </p>
-                      <div className="flex  items-center justify-between">
-                        <div className=" pt-2 text-[14px] text-[#000000]">
-                          {wishlistContent && wishlistContent.length > 0 ? (
-                            wishlistContent[wishlistContent.length - 1]
-                              .formattedDate
-                          ) : (
-                            <span>No items in wishlist</span>
-                          )}
+                        <Link
+                          href={`/products/${item.id}`}
+                          className=" pt-3 text-[16px] line-clamp-2 text-[#666666] "
+                        >
+                          {item.id}
+                        </Link>
+                        <div className="flex  items-center justify-between">
+                          <div className=" pt-2 text-[14px] text-[#000000]">
+                            {wishContent && wishContent.length > 0 ? (
+                              wishContent[wishContent.length - 1].formattedDate
+                            ) : (
+                              <span>No items in wishlist</span>
+                            )}
+                          </div>
                         </div>
                         <div className=" flex items-center ">
                           <AlertDialog>
@@ -240,7 +227,6 @@ const page = () => {
                               <Trash
                                 size={20}
                                 className="hover:fill-[#000000] "
-                                onClick={clearItemfromcart}
                               />
                             </AlertDialogTrigger>
                             <AlertDialogContent className="bg-white">
@@ -256,7 +242,12 @@ const page = () => {
                                 <AlertDialogCancel className="cursor-pointer">
                                   Cancel
                                 </AlertDialogCancel>
-                                <AlertDialogAction className="bg-red-600 text-white cursor-pointer">
+                                <AlertDialogAction
+                                  onClick={() => {
+                                    clearItemfromcart(item.id);
+                                  }}
+                                  className="bg-red-600 text-white cursor-pointer"
+                                >
                                   Continue
                                 </AlertDialogAction>
                               </AlertDialogFooter>
@@ -264,11 +255,8 @@ const page = () => {
                           </AlertDialog>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                ) : (
-                  ""
-                )}
+                    ))}
+                </div>
               </div>
             </div>
           </div>

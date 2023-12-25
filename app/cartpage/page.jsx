@@ -11,7 +11,7 @@ import Link from "@/node_modules/next/link";
 const page = () => {
   return (
     <>
-      <div className="flex-col pt-[10px] pb-[20px]">
+      <div className="flex-col pt-[5px] pb-[20px]">
         <div
           className="bg-cover min-h-[200px] bg-no-repeat bg-center mb-[40px]  flex items-center justify-center"
           style={{ backgroundImage: "url(/images/breadcrumb_img.jpg)" }}

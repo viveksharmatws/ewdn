@@ -57,7 +57,9 @@ const Gridproducts = () => {
 
                       const existingWishlist =
                         JSON.parse(localStorage.getItem("wishlist")) || [];
+
                       existingWishlist.push(wishlistItem);
+
                       localStorage.setItem(
                         "wishlist",
                         JSON.stringify(existingWishlist)
@@ -69,6 +71,9 @@ const Gridproducts = () => {
                         description: formattedDate,
                         id: product.id,
                       });
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 3000);
                     }}
                     className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   "
                   >
@@ -111,7 +116,7 @@ const Gridproducts = () => {
                 <div className="absolute left-[-2px] top-[8px] flex flex-col gap-[2px] ">
                   <div className="opacity-0 duration-500 group-hover:opacity-100">
                     <div>
-                      <span className="bg-green-500 px-[7px] py-[3px] text-[11px] font-medium capitalize leading-[15px] tracking-[0.5px] text-white duration-300 group-hover:translate-x-3  shadow-sm shadow-slate-950">
+                      <span className="bg-green-500 px-[7px] py-[3px] text-[11px] font-medium capitalize leading-[15px] tracking-[0.5px] text-white duration-300 group-hover:translate-x-3  shadow-sm shadow-slate-750">
                         new
                       </span>
                     </div>

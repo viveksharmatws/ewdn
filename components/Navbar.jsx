@@ -238,7 +238,7 @@ const Navbar = () => {
       </nav>
       <Sheet>
         <div className="bg-white  ">
-          <div className="mx-auto flex max-w-[1430px] justify-between  py-[12px] md:py-[20px] px-[15px]  max-md:items-center max-md:gap-10">
+          <div className="mx-auto flex max-w-[1430px] justify-between  py-[8px] md:py-[20px] px-[15px]  max-md:items-center max-md:gap-10">
             <div className="flex items-center justify-center gap-2">
               <div className="lg:hidden block">
                 <SheetTrigger className="flex bg-white">
@@ -304,7 +304,7 @@ const Navbar = () => {
               </DropdownMenu>
 
               <Link href="/wishlist" className="cursor-pointer  relative">
-                <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black top-[-8px] rounded-full">
+                <div className=" absolute min-w-[18px] flex  justify-center min-h-[15px] right-[-8px]  opacity-80 bg-black sm:top-[-9px] top-[-6px] rounded-full">
                   <p className="text-white text-[12px] px-1 ">
                     {wishlist?.length || 0}
                   </p>
@@ -469,9 +469,12 @@ const Navbar = () => {
                           </div>
                         </div>
                         <div className="flex gap-5 w-full">
-                          <div className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center">
+                          <Link
+                            href="/cartpage"
+                            className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center"
+                          >
                             View Cart
-                          </div>
+                          </Link>
 
                           <div className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center">
                             Checkout
