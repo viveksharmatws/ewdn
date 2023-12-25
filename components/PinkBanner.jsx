@@ -19,7 +19,7 @@ const PinkBanner = () => {
 
       <Link
         href="/products"
-        className="  max-w-[200px] rounded-none  bg-black sm:px-[34px]  sm:py-[25px]   font-medium leading-[22px] tracking-[0.5px]  text-white  hover:bg-white hover:text-black xl:text-[17px]"
+        className="  max-w-[200px] rounded-none  bg-black  px-[20px]  py-[15px] sm:px-[34px]  sm:py-[25px]   font-medium leading-[22px] tracking-[0.5px]  text-white  hover:bg-white hover:text-black xl:text-[17px]"
       >
         View Collection
       </Link>

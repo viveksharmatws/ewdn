@@ -19,7 +19,7 @@ const Discountsection = () => {
               />
             </div>
 
-            <div className=" absolute left-2 top-[40px] min-[380px]:top-[60px] min-[460px]:top-[100px] max-sm:pl-[10px]  sm:left-5 sm:top-10">
+            <div className=" absolute left-2 top-[20%] min-[380px]:top-[60px] min-[460px]:top-[100px] max-sm:pl-[10px]  sm:left-5 sm:top-10">
               <h4 className="text-[16px] font-normal sm:leading-[26px] tracking-[0.3px]">
                 {item.discountRate}
               </h4>

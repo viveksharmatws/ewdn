@@ -27,7 +27,11 @@ const Gridproducts = () => {
       <Dialog>
         <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px] place-items-center sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
           {jsonData.map((product) => (
-            <div key={product.index} className="w-full">
+            <Link
+              href={`/products/${product.id}`}
+              key={product.index}
+              className="w-full"
+            >
               <div className="group relative duration-1000 overflow-hidden">
                 <Image
                   src={`/images${product.all_images[0]}`}
@@ -134,12 +138,9 @@ const Gridproducts = () => {
                 <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
                   {product.subheading}
                 </h3>
-                <Link
-                  className=" text-[20px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1"
-                  href={`/products/${product.id}`}
-                >
+                <h2 className=" text-[20px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1">
                   {product.heading}
-                </Link>
+                </h2>
                 <div className="flex py-1">
                   <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                   <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
@@ -151,13 +152,13 @@ const Gridproducts = () => {
                   ${product.price}
                 </h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex items-center justify-center shrink-0 mb-[10px] p-4 mt-5">
           <Link
-            href="/productgrid"
-            className=" max-sm:px-[16px] border-black border hover:bg-[#222]  hover:text-white px-[34px] max-sm:min-w-[116px] 2xl:min-h-[50px] text-[14px] md:text-[17px] py-[14px] font-semibold tracking-[0.5px] transition  duration-3000 text-[#222]"
+            href="/productdetailblog"
+            className=" max-sm:px-[26px] border-black border hover:bg-[#222]  hover:text-white px-[34px] max-sm:min-w-[116px] 2xl:min-h-[50px] text-[14px] md:text-[17px] py-[14px] font-semibold tracking-[0.5px] transition  duration-3000 text-[#222]"
           >
             All Products
           </Link>

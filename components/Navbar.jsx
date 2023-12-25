@@ -84,7 +84,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#222222] md:block hidden   ">
+      <nav className="bg-[#222222] md:block hidden hidden-on-scroll   visible   ">
         <div className=" mx-auto    flex max-w-[1430px]  justify-between gap-4 py-[8px] px-[15px] flex-row">
           <div className="flex gap-5">
             <ul className="flex items-center gap-[9px]">
@@ -436,7 +436,7 @@ const Navbar = () => {
                               </div>
                               <div>
                                 <p className="text-[18px] font-semibold text-[#ff0000]">
-                                  $7.00
+                                  $3.00 each item
                                 </p>
                               </div>
                             </div>
@@ -451,7 +451,7 @@ const Navbar = () => {
                             </div>
                             <div>
                               <p className="text-[18px] font-semibold text-[#ff0000]">
-                                $351.00
+                                ${sumOfPrices + products?.length * 3}
                               </p>
                             </div>
                           </div>
@@ -463,12 +463,15 @@ const Navbar = () => {
                             </div>
                             <div>
                               <p className="text-[18px] font-semibold text-[#ff0000]">
-                                ${sumOfPrices}
+                                $
+                                {sumOfPrices +
+                                  (sumOfPrices * 18) / 100 +
+                                  products?.length * 3}
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="flex gap-5 w-full">
+                        <div className="flex gap-2 w-full">
                           <Link
                             href="/cartpage"
                             className="bg-[#222] text-white px-5 py-3 w-full flex items-center justify-center"
