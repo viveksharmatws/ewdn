@@ -14,23 +14,33 @@ import Footer from "@/components/Footer";
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import ImageZoom from "react-image-zooom";
-import { Input } from "@/components/ui/input";
 import Breadcrumbcomponent from "@/components/Breadcrumbcomponent";
 import Security from "@/elements/securty";
+
 import Reviews from "@/elements/Reviews";
 import jsonData from "data.json";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import Tabscompo from "@/components/Tabs";
 import Link from "@/node_modules/next/link";
 import { useToast } from "@/components/ui/use-toast";
-import { Button } from "@/components/ui/button";
 
 const page = () => {
   const params = useParams();
   const user = params;
+  const { toast } = useToast();
+
   const [product, setProduct] = useState([]);
   const [inputValue, setInputValue] = useState("1");
-  const { toast } = useToast();
+  var currentDate = new Date();
+  var formattedDate = currentDate.toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -105,10 +115,10 @@ const page = () => {
         <div className=" mt-[30px] w-full max-md:flex-col md:flex ">
           <div className="w-full sm:w-1/2 mx-auto">
             <div className="p-[15px]  lg:flex gap-4 ">
-              <div className=" hidden  lg:flex max-w-[100px] max-h-[600px] ">
+              <div className=" hidden  lg:flex max-w-[100px] h-auto w-full max-h-[600px] ">
                 <Slider {...settings}>
                   {carouselImages.map((i, index) => (
-                    <div key={index} className="max-h-[200px] ">
+                    <div key={index} className="max-h-[1400px] ">
                       <Image
                         src={i}
                         width={100}
@@ -165,7 +175,7 @@ const page = () => {
                   <div className="pl-[5px]"> 0 Reviews(s)</div>
                 </div>
               </div>
-              <div className=" mb-[7px] text-[28px] font-medium tracking-[0.5px]  text-black">
+              <div className=" uppercase mb-[7px] text-[28px] font-medium tracking-[0.5px]  text-black">
                 {product.heading}
               </div>
               <div className="mb-[15px] text-[18px] font-normal leading-[26px] text-[#666]">
@@ -268,6 +278,9 @@ const page = () => {
                       description: `${product.heading} is added to your cart`,
                       id: `${product.id}`,
                     });
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 1000);
                   }}
                 >
                   Add to Cart
@@ -282,16 +295,48 @@ const page = () => {
                 </h3>
               </div>
               <div className=" flex items-center justify-center gap-2">
-                <Image
-                  alt="heart"
-                  src="/images/heart.svg"
-                  width={20}
-                  height={20}
-                />
+                <Link
+                  href="#"
+                  className="flex gap-2"
+                  onClick={() => {
+                    const productTitle = "Product is added to wishlist";
+                    const wishlistItem = {
+                      title: productTitle,
+                      formattedDate,
+                      id: product.id,
+                    };
 
-                <h3 className="sm:text-[18px] text-[14px]  font-normal capitalize leading-[22px] tracking-[0.5px] text-black">
-                  add to wishlist
-                </h3>
+                    const existingWishlist =
+                      JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                    existingWishlist.push(wishlistItem);
+
+                    localStorage.setItem(
+                      "wishlist",
+                      JSON.stringify(existingWishlist)
+                    );
+
+                    // Display toast notification
+                    toast({
+                      title: "This item has been added to the wishlist",
+                      description: formattedDate,
+                      id: product.id,
+                    });
+                    setTimeout(() => {
+                      window.location.reload();
+                    }, 3000);
+                  }}
+                >
+                  <Image
+                    alt="heart"
+                    src="/images/heart.svg"
+                    width={20}
+                    height={20}
+                  />
+                  <h3 className="sm:text-[18px] text-[14px]  font-normal capitalize leading-[22px] tracking-[0.5px] text-black">
+                    add to wishlist
+                  </h3>
+                </Link>
               </div>
             </div>
             <div className="mt-[20px] mb-[15px]">
@@ -373,14 +418,46 @@ const page = () => {
                       />
                     )}
                     <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
-                      <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
-                        <Image
-                          src="../images/heart.svg"
-                          alt=""
-                          width={17}
-                          height={17}
-                          className="brightness-0 invert "
-                        />
+                      <div
+                        onClick={() => {
+                          const productTitle = "Product is added to wishlist";
+                          const wishlistItem = {
+                            title: productTitle,
+                            formattedDate,
+                            id: product.id,
+                          };
+
+                          const existingWishlist =
+                            JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                          existingWishlist.push(wishlistItem);
+
+                          localStorage.setItem(
+                            "wishlist",
+                            JSON.stringify(existingWishlist)
+                          );
+
+                          // Display toast notification
+                          toast({
+                            title: "This item has been added to the wishlist",
+                            description: formattedDate,
+                            id: product.id,
+                          });
+                          setTimeout(() => {
+                            window.location.reload();
+                          }, 3000);
+                        }}
+                        className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  cursor-pointer "
+                      >
+                        <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
+                          <Image
+                            src="../images/heart.svg"
+                            alt=""
+                            width={17}
+                            height={17}
+                            className="brightness-0 invert "
+                          />
+                        </div>
                       </div>
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                         <Image
@@ -479,14 +556,46 @@ const page = () => {
                       />
                     )}
                     <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
-                      <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
-                        <Image
-                          src="../images/heart.svg"
-                          alt="heart"
-                          width={17}
-                          height={17}
-                          className="brightness-0 invert "
-                        />
+                      <div
+                        onClick={() => {
+                          const productTitle = "Product is added to wishlist";
+                          const wishlistItem = {
+                            title: productTitle,
+                            formattedDate,
+                            id: product.id,
+                          };
+
+                          const existingWishlist =
+                            JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                          existingWishlist.push(wishlistItem);
+
+                          localStorage.setItem(
+                            "wishlist",
+                            JSON.stringify(existingWishlist)
+                          );
+
+                          // Display toast notification
+                          toast({
+                            title: "This item has been added to the wishlist",
+                            description: formattedDate,
+                            id: product.id,
+                          });
+                          setTimeout(() => {
+                            window.location.reload();
+                          }, 3000);
+                        }}
+                        className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  cursor-pointer "
+                      >
+                        <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
+                          <Image
+                            src="../images/heart.svg"
+                            alt="heart"
+                            width={17}
+                            height={17}
+                            className="brightness-0 invert "
+                          />
+                        </div>
                       </div>
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                         <Image

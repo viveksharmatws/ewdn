@@ -1,3 +1,4 @@
+"use client";
 import DealofDay from "@/components/DealofDay";
 import Fourcategories from "@/components/Fourcategories";
 import Gridproducts from "@/components/Gridproducts";
@@ -12,7 +13,8 @@ import ShippingDescription from "@/components/ShippingDescription";
 import Testimonials from "@/components/Testimonials";
 import Tshirtspec from "@/components/Tshirtspec";
 import BrandCarousal from "@/components/brandcarousal";
-import React from "react";
+import React, { Suspense } from "react";
+import loading from "./loading";
 
 const page = () => {
   return (

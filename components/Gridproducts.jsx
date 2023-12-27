@@ -78,32 +78,32 @@ const Gridproducts = () => {
                           window.location.reload();
                         }, 3000);
                       }}
-                      className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   "
+                      className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  cursor-pointer "
                     >
                       <Image
                         src="../images/heart.svg"
                         alt="heart"
                         width={17}
                         height={17}
-                        className="brightness-0 invert cursor-pointer "
+                        className="brightness-0 invert  "
                       />
                     </div>
-                    <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                    <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center cursor-pointer ">
                       <Image
                         src="../images/compare.svg"
                         alt="compare"
                         width={17}
                         height={17}
-                        className="brightness-0 invert cursor-pointer"
+                        className="brightness-0 invert"
                       />
                     </div>
-                    <DialogTrigger className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                    <DialogTrigger className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center cursor-pointer ">
                       <Image
                         src="../images/wide.svg"
                         alt="wide"
                         width={17}
                         height={17}
-                        className="brightness-0 invert  cursor-pointer"
+                        className="brightness-0 invert  "
                       />
                     </DialogTrigger>
                     <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
@@ -148,9 +148,18 @@ const Gridproducts = () => {
                   <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                   <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                 </div>
-                <h3 className="mt-[4px] text-[20px] mb-5 font-medium leading-[20px] text-[#ff0000]  ">
-                  ${product.price}
-                </h3>
+                <div className="flex items-center  gap-2 ">
+                  <div>
+                    <p className=" line-through decoration-black text-[#6666]  decoration-1 text-[20px]">
+                      ${product.notprice}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="  gap-[5px] text-[20px] font-medium leading-[20px] text-[#ff0000]">
+                      ${product.price}
+                    </p>
+                  </div>
+                </div>
               </Link>
             </div>
           ))}

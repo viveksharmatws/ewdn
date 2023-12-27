@@ -5,8 +5,20 @@ import { IoStar } from "react-icons/io5";
 
 import Image from "next/image";
 import Link from "@/node_modules/next/link";
+import { useToast } from "./ui/use-toast";
 
 const DealofDay = () => {
+  const { toast } = useToast();
+  var currentDate = new Date();
+  var formattedDate = currentDate.toLocaleString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
   return (
     <section className="mx-auto max-w-[1430px] pt-[40px] sm:pt-[90px] px-[15px]">
       <h2 className="sm:text-[45px]  text-[30px] font-normal capitalize">
@@ -34,39 +46,71 @@ const DealofDay = () => {
               )}
               <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition">
                 <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
-                  <Image
-                    src="../images/heart.svg"
-                    alt="heart"
-                    width={17}
-                    height={17}
-                    className="brightness-0 invert "
-                  />
+                  <div
+                    onClick={() => {
+                      const productTitle = "Product is added to wishlist";
+                      const wishlistItem = {
+                        title: productTitle,
+                        formattedDate,
+                        id: product.id,
+                      };
+
+                      const existingWishlist =
+                        JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                      existingWishlist.push(wishlistItem);
+
+                      localStorage.setItem(
+                        "wishlist",
+                        JSON.stringify(existingWishlist)
+                      );
+
+                      // Display toast notification
+                      toast({
+                        title: "This item has been added to the wishlist",
+                        description: formattedDate,
+                        id: product.id,
+                      });
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 3000);
+                    }}
+                    className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   cursor-pointer "
+                  >
+                    <Image
+                      src="../images/heart.svg"
+                      alt="heart"
+                      width={17}
+                      height={17}
+                      className="brightness-0 invert  "
+                    />
+                  </div>
                 </div>
-                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  cursor-pointer">
                   <Image
                     src="../images/compare.svg"
                     alt="compare"
                     width={17}
                     height={17}
-                    className="brightness-0 invert"
+                    className="brightness-0 invert "
                   />
                 </div>
-                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
+                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center cursor-pointer ">
                   <Image
                     src="../images/wide.svg"
                     alt="wide"
                     width={17}
                     height={17}
-                    className="brightness-0 invert"
+                    className="brightness-0 invert "
                   />
                 </div>
-                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
+                <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center cursor-pointer">
                   <Image
                     src="../images/addtoviewpage.svg"
                     alt="addtoviewpage"
                     width={17}
                     height={17}
-                    className="brightness-0 invert max-w-[17px] w-full"
+                    className="brightness-0 invert max-w-[17px] w-full "
                   />
                 </div>
               </div>
@@ -88,11 +132,11 @@ const DealofDay = () => {
             </div>
 
             <div className="pt-[10px]">
-              <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
+              <h3 className="capitalize text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
                 {product.subheading}
               </h3>
               <Link
-                href="/productdetailblog"
+                href={`/products/${product.id}`}
                 className=" text-[18px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1"
               >
                 {product.heading}
@@ -104,8 +148,9 @@ const DealofDay = () => {
                 <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
                 <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />
               </div>
-              <h3 className="mt-[4px] text-[20px] font-medium leading-[20px] text-[#ff0000]  ">
-                ${product.price}
+              <h3 className="flex items-center mt-[4px] pt-[2px] gap-[5px] text-[20px] mb-5 font-medium leading-[20px] text-[#ff0000]  ">
+                <p className="line-through text-[#6666] text-[19px]">$56</p>$
+                {product.price}
               </h3>
             </div>
           </div>

@@ -11,7 +11,10 @@ const LayoutGridfullwidth = () => {
       {jsonData.map((product) => (
         <div className="flex-col pb-[10px]">
           <div className=" w-full mx-auto  flex max-sm:flex-col p-[2px] pb-[10px]  ">
-            <div className=" item-center justify-center flex  max-w-[260px] max-sm:mx-auto sm:min-w-[260px] max-h-[360px] shrink-0">
+            <Link
+              href={`/products/${product.id}`}
+              className=" item-center justify-center flex  max-w-[260px] max-sm:mx-auto sm:min-w-[260px] max-h-[360px] shrink-0"
+            >
               <Image
                 src={`/images${product.all_images[0]}`}
                 alt="prouct "
@@ -19,18 +22,23 @@ const LayoutGridfullwidth = () => {
                 height={316}
                 className="shrink-0 w-full"
               />
-            </div>
+            </Link>
             <div className="flex-col px-[25px] pt-[15px] min-h-[316px] max-sm:text-center ">
-              <h3 className="text-[17] text-[#666] font-normal  leading-[26px] mb-1  ">
+              <Link
+                href={`/products/${product.id}`}
+                className="text-[17] text-[#666] font-normal  leading-[26px] mb-1  "
+              >
                 {product.subheading}
-              </h3>
+              </Link>
 
               {product.heading && (
-                <Link
-                  href="/products"
-                  className="text-[20px] text-[#222] leading-[22px] py-[2px] max-sm:text-center"
-                >
-                  {product.heading}
+                <Link href={`/products/${product.id}`}>
+                  <h2
+                    href="/products"
+                    className="text-[20px] text-[#222] leading-[22px] py-[2px] max-sm:text-center"
+                  >
+                    {product.heading}
+                  </h2>
                 </Link>
               )}
 

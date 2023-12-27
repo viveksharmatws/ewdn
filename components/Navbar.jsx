@@ -81,6 +81,18 @@ const Navbar = () => {
     0
   );
 
+  const clearItemfromcart = (itemId) => {
+    const updatedContent = products.filter((product) => product.id !== itemId);
+
+    setProduct(updatedContent);
+    localStorage.setItem("cart", JSON.stringify(updatedContent));
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  };
+
+  // products && console.log(products[0].id);
   return (
     <>
       <nav className="bg-[#222222] md:block hidden hidden-on-scroll   visible   ">
@@ -354,57 +366,66 @@ const Navbar = () => {
                                     height={100}
                                   />
                                 </div>
-                                <div className="flex-col shrink-1">
-                                  <div>
-                                    <h1
-                                      className="text-[18px]  tracking-[0.5px] line-clamp-1"
-                                      key={index}
-                                    >
-                                      {item?.heading}
-                                    </h1>
-                                  </div>
-                                  <div className="flex items-center ">
-                                    <h1
-                                      className="text-[18px] tracking-[0.5px]"
-                                      key={index}
-                                    >
-                                      1 X {item?.price}
-                                    </h1>
+                                <div className="w-full flex justify-between">
+                                  <div className="flex-col shrink-1">
+                                    <div>
+                                      <h1
+                                        className="text-[18px]  tracking-[0.5px] line-clamp-1"
+                                        key={index}
+                                      >
+                                        {item?.heading}
+                                      </h1>
+                                    </div>
+                                    <div className="flex items-center ">
+                                      <h1
+                                        className="text-[18px] tracking-[0.5px]"
+                                        key={index}
+                                      >
+                                        1 X {item?.price}
+                                      </h1>
 
-                                    <span className=" px-1 text-[#ff0000] text-[18px] font-medium">
-                                      ${item?.product?.price}
-                                    </span>
+                                      <span className=" px-1 text-[#ff0000] text-[18px] font-medium">
+                                        ${item?.product?.price}
+                                      </span>
+                                    </div>
                                   </div>
-                                </div>
-                                <div className="px-[10px] pt-[8px] cursor-pointer  ">
-                                  <AlertDialog>
-                                    <AlertDialogTrigger>
-                                      <Trash
-                                        size={20}
-                                        className="hover:fill-[#000000] "
-                                      />
-                                    </AlertDialogTrigger>
-                                    <AlertDialogContent className="bg-white">
-                                      <AlertDialogHeader>
-                                        <AlertDialogTitle>
-                                          Are you absolutely sure?
-                                        </AlertDialogTitle>
-                                        <AlertDialogDescription>
-                                          This action cannot be undone. This
-                                          will permanently delete your account
-                                          and remove your data from our servers.
-                                        </AlertDialogDescription>
-                                      </AlertDialogHeader>
-                                      <AlertDialogFooter>
-                                        <AlertDialogCancel className="cursor-pointer">
-                                          Cancel
-                                        </AlertDialogCancel>
-                                        <AlertDialogAction className="bg-red-600 text-white cursor-pointer">
-                                          Continue
-                                        </AlertDialogAction>
-                                      </AlertDialogFooter>
-                                    </AlertDialogContent>
-                                  </AlertDialog>
+                                  <div className="px-[10px] pt-[8px] cursor-pointer  ">
+                                    <AlertDialog>
+                                      <AlertDialogTrigger>
+                                        <Trash
+                                          size={20}
+                                          className="hover:fill-[#000000] "
+                                        />
+                                      </AlertDialogTrigger>
+                                      <AlertDialogContent className="bg-white">
+                                        <AlertDialogHeader>
+                                          <AlertDialogTitle>
+                                            Are you absolutely sure?
+                                          </AlertDialogTitle>
+                                          <AlertDialogDescription>
+                                            This action cannot be undone. This
+                                            will permanently delete your account
+                                            and remove your data from our
+                                            servers.
+                                          </AlertDialogDescription>
+                                        </AlertDialogHeader>
+                                        <AlertDialogFooter>
+                                          <AlertDialogCancel className="cursor-pointer">
+                                            Cancel
+                                          </AlertDialogCancel>
+
+                                          <AlertDialogAction
+                                            onClick={() =>
+                                              clearItemfromcart(item?.id)
+                                            }
+                                            className="bg-red-600 text-white cursor-pointer"
+                                          >
+                                            Continue
+                                          </AlertDialogAction>
+                                        </AlertDialogFooter>
+                                      </AlertDialogContent>
+                                    </AlertDialog>
+                                  </div>
                                 </div>
                               </div>
                             </div>

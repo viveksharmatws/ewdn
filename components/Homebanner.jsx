@@ -6,6 +6,7 @@ import Image from "next/image";
 import homebanner from "../public/images/homebanner1.jpg";
 import blackbanner from "../public/images/blackgirlhomebanner.jpg";
 import Link from "@/node_modules/next/link";
+import { Suspense } from "react";
 
 const Homebanner = () => {
   return (
@@ -26,6 +27,7 @@ const Homebanner = () => {
               <h4 className=" xl:top-[143px]  md:text-[22px]  font-normal sm:text-[20px]  md:mb-[12px] mb-[5px]  text-[10px] tracking-[0.3px] ">
                 100% Original Products
               </h4>
+
               <h1 className=" max-[400px]:text-[16px] max-[600px]:text-[20px] max-[400px]:leading-[20px] text-[22px] max-w-[170px] leading-[25px] sm:max-w-[350px] md:max-w-[450px] xl:max-w-[600px] md:top-[203px]  sm:text-[40px] xl:text-[65px] sm:mb-[10px] font-normal sm:leading-[40px]  md:leading-[45px]  xl:leading-[75px] md:mb-[20px] ">
                 Peach Color Up Neck Blouson Top
               </h1>

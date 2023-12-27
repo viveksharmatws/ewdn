@@ -246,14 +246,16 @@ const page = () => {
                       </div>
 
                       <div>
-                        <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
-                          {product.subheading}
-                        </h3>
                         <Link
-                          href="/products"
-                          className="max-w-[200px] text-[20px] font-normal capitalize leading-[22px] cursor-pointer tracking-[0.3px]"
+                          href={`/products/${product.id}`}
+                          className="cursor-pointer"
                         >
-                          {product.heading}
+                          <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
+                            {product.subheading}
+                          </h3>
+                          <h2 className="max-w-[200px] text-[20px] font-normal capitalize leading-[22px] cursor-pointer tracking-[0.3px]">
+                            {product.heading}
+                          </h2>
                         </Link>
                         <div className="flex ">
                           <IoStar className=" fill-[#f2b600] h-[14px] w-[13px]" />

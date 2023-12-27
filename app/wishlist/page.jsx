@@ -21,6 +21,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { ListOrdered } from "lucide-react";
 
 const page = () => {
   const [wishContent, setContent] = useState(null);
@@ -36,7 +37,7 @@ const page = () => {
     setVisible((prev) => !prev);
 
     const found = jsonData.filter((element) =>
-      wishContent.map((x) => x.id).includes(element.id)
+      wishContent?.map((x) => x.id).includes(element.id)
     );
     setproductdetail(found);
   };
@@ -137,7 +138,7 @@ const page = () => {
                         <tbody>
                           <tr className="border-[1px] p-3 text-[18px]  border-[#e5e5e5]">
                             <td className="p-3 items-center flex gap-1 text-[#666666] whitespace-nowrap text-sm font-medium   ">
-                              <AlignLeft
+                              <ListOrdered
                                 onClick={showsection}
                                 className="cursor-pointer"
                               />
@@ -147,7 +148,7 @@ const page = () => {
                               </span>
                             </td>
                             <td className="text-sm     font-light p-3 text-[18px] text-[#666666] whitespace-nowrap">
-                              {wishContent && wishContent.length}
+                              {(wishContent && wishContent.length) || 0}
                             </td>
                             <td className="text-sm     font-light p-3 text-[18px] text-[#666666] whitespace-nowrap">
                               2
@@ -222,28 +223,30 @@ const page = () => {
                   </Link>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
+                <div className="grid max-sm:place-items-center sm:grid-cols-2 lg:grid-cols-5 gap-[10px]">
                   {visible &&
                     productdetail &&
                     productdetail.length > 0 &&
                     productdetail.map((product) => (
                       <div className="  flex flex-col px-[20px] pt-[20px] pb-[30px] border-[#e5e5e5] bg-[#F0F0F0] rounded-2xl max-w-[300px] w-full mb-10">
-                        <Image
-                          src={`/images${product.all_images[0]}`}
-                          width={400}
-                          height={400}
-                          alt="product switch image"
-                        />
-
-                        <Link
-                          href={`/products/${product.id}`}
-                          className=" pt-3 text-[16px] line-clamp-2 text-[#666666] cursor-pointer "
-                        >
-                          {product.heading}
+                        <Link href={`/products/${product.id}`}>
+                          <Image
+                            src={`/images${product.all_images[0]}`}
+                            width={400}
+                            height={400}
+                            alt="product switch image"
+                          />
                         </Link>
-                        <p className=" text-[18px] font-bold text-[#666666] line-clamp-2 uppercase cursor-pointer ">
-                          {product.subheading}
-                        </p>
+
+                        <Link href={`/products/${product.id}`}>
+                          <h2 className=" pt-3 text-[16px] line-clamp-2 text-[#666666] cursor-pointer ">
+                            {product.heading}
+                          </h2>
+                          <h4 className=" text-[18px] font-bold text-[#666666] line-clamp-2 uppercase cursor-pointer ">
+                            {product.subheading}
+                          </h4>
+                        </Link>
+
                         <div className="flex items-center justify-between">
                           <div className="pt-2 text-[14px] text-[#222]">
                             {wishContent && wishContent.length > 0 ? (
