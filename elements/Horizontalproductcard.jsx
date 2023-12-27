@@ -9,7 +9,7 @@ const HorizontalProductCard = ({ imageUrl }) => {
       <div>
         <Image
           src={"/images/redsuitgirl.jpg"}
-          alt=""
+          alt="redsuitgirl"
           width={90}
           height={110}
           className="min-h-[110px] min-w-[90px]"

@@ -4,12 +4,7 @@ import React from "react";
 import discountgirlbanner from "/public/images/discountleft.jpg";
 import Breadcrumb from "@/components/Breadcrumb";
 import Categoryfilter from "@/elements/Categoryfilter";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "@/node_modules/next/link";
@@ -48,9 +43,7 @@ const Login = () => {
         </div>
 
         <div className="flex-col  max-lg:order-1 sm:px-[15px] px-[7px] w-full">
-          <div className=" mt-[10px] gap-10 pb-5 flex-col sm:items-start  sm:place-items-center md:max-w-[1200px] w-full space-y-6">
-            {/* here comes the form */}
-
+          <div className=" mt-[10px] gap-10 pb-5 flex-col sm:items-start   md:max-w-[1200px] w-full space-y-6">
             <div className="2xl:min-w-[1100px] lg:min-w-[700px] border-[#e5e5e5] border p-[15px] md:p-[30px] mb-[15px] flex-col">
               <p className="text-[16px] max-sm:p-4 sm:text-[18px] md:p-[16px] font-normal leading-[26px] tracking-[0.5px] capitalize text-[#666]">
                 Please enter the email address you used to register. You will

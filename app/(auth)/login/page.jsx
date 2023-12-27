@@ -47,9 +47,7 @@ const Login = () => {
           </div>
         </div>
         <div className="flex-col  max-lg:order-1 sm:px-[15px] px-[7px] w-full">
-          <div className="  gap-10   sm:items-start  sm:place-items-center md:max-w-[1200px] w-full pb-[60px]">
-            {/* here comes the form */}
-
+          <div className="  gap-10   sm:items-start  md:max-w-[1200px] w-full pb-[60px]">
             <div className="2xl:min-w-[1100px] lg:min-w-[700px] border-[#e5e5e5] border p-[15px] sm:p-[30px]">
               <div className="sm:flex max-sm:flex-col items-center mb-4">
                 <p className=" w-full sm:w-1/4 text-[18px] text-left sm:text-right font-normal pt-1 px-[16px] sm:px-[5px] xl:px-4  ">

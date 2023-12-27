@@ -61,9 +61,7 @@ const AddressAdd = () => {
         </div>
 
         <div className="flex-col  max-lg:order-1 sm:px-[15px] px-[7px] w-full">
-          <div className="  gap-10 pb-5 flex-col sm:items-start  sm:place-items-center md:max-w-[1200px] w-full space-y-6">
-            {/* here comes the form */}
-
+          <div className="  gap-10 pb-5 flex-col sm:items-start   md:max-w-[1200px] w-full space-y-6">
             <div className="2xl:min-w-[1100px] lg:min-w-[700px]   mb-[15px] ">
               <div className="sm:p-5 lg:p-[20px] p-[10px] border  flex-col">
                 <div className=" max-md:flex-col flex  items-start mb-4">

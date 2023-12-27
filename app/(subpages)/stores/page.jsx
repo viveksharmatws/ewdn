@@ -131,7 +131,6 @@ const Aboutus = () => {
                 </div>
               </div>
             </div>
-            {/* above */}
           </div>
         </div>
       </div>

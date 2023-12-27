@@ -50,9 +50,7 @@ const page = () => {
         </div>
 
         <div className="flex-col  sm:px-[15px] px-[10px] w-full">
-          <div className="  gap-10 pb-5 flex-col sm:items-start  sm:place-items-center md:max-w-[1200px] w-full space-y-6">
-            {/* here comes the form */}
-
+          <div className="  gap-10 pb-5 flex-col sm:items-start   md:max-w-[1200px] w-full space-y-6">
             <div className="2xl:min-w-[1100px] lg:min-w-[700px] border-[#e5e5e5] border py-[17px] px-[20px] mb-[10px] hover:border-[#222222]">
               <div className="flex gap-2">
                 <Link href="/login">

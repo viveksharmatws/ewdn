@@ -71,6 +71,7 @@ const page = () => {
                   className="w-full z-0"
                   width={500}
                   height={500}
+                  alt="buy bag"
                 />
                 <div className="bg-black opacity-60 sm:min-h-[32px] absolute bottom-5 px-[10px]  sm:py-[10px] sm:px-[20px] w-full  text-white ">
                   <div className="sm:min-h-[32px]  max-lg:flex-col lg:flex z-20 ">
@@ -111,7 +112,6 @@ const page = () => {
                   </div>
                 </div>
               </div>
-              {/* here the following content after image */}
               <div className="mb-[60px] text-justify">
                 <p className="text-[18px]  leading-[26px] tracking-[0.5px]  text-[#666] mb-[10px] ">
                   Suspendisse posuere, diam in bibendum lobortis, turpis ipsum
@@ -165,7 +165,6 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              {/* list div starts */}
               <div className="max-lg:flex-col flex    max-sm:space-y-5  w-full  mb-[30px]">
                 <div className="w-full mb-5">
                   <h2 className="mb-[20px] text-[20px] font-medium leading-[22px] tracking-[0.5px]">
@@ -214,7 +213,6 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              {/* comments form begins here */}
               <div className="flex-col">
                 <div className="mb-[15px]">
                   <h2 className="pb-[15px] text-[20px] font-medium  leading-[22px] tracking-[0.5px] text-black capitalize mb-[15px]">
@@ -224,7 +222,6 @@ const page = () => {
                     Leave your comment
                   </h2>
                 </div>
-                {/* form div begins here  */}
                 <div>
                   <div className="   xl:max-w-[1000px] w-full    mb-10">
                     <div>

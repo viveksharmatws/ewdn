@@ -18,7 +18,6 @@ const page = () => {
         <div className="flex max-lg:flex-col   max-lg:p-2  max-w-[1430px] mx-auto gap-[30px] w-full lg:px-[15px]">
           <PersonalAccordian />
 
-          {/* second price checkout section */}
           <div className="flex-col">
             <div className=" md:min-w-[440px] border flex-col border-gray-200 mb-[25px] ">
               <div className="border-gray-100 border-b">

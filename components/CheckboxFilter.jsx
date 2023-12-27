@@ -12,7 +12,6 @@ const CheckboxFilter = ({ value, ColorFilter }) => {
           className="item-baseline justify-between flex w-full py-1"
         >
           <div className="flex items-center">
-            {/* <div className=""> */}
             {ColorFilter ? (
               <label
                 htmlFor={`check-${s.Title}`}
@@ -25,7 +24,6 @@ const CheckboxFilter = ({ value, ColorFilter }) => {
                 className="appearance-none border border-black rounded-md w-5 h-5 checked:bg-black checked:border-none"
               />
             )}
-            {/* </div> */}
             <label
               htmlFor={`check-${s.Title}`}
               className="pl-2 text-[18px] leading-[26px] tracking-[0.5px] font-normal"

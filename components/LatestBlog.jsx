@@ -211,7 +211,7 @@ const LatestBlogs = () => {
               <h4 className="text-[15px] font-medium leading-[50px] text-[#FF0000] w-full">
                 <p href="">September 3,2023</p>
               </h4>
-              <h3 className="text-[22px] font-normal pb-2 leading-[23px] pb-2">
+              <h3 className="text-[22px] font-normal pb-2 leading-[23px] ">
                 <Link href="/productdetailblog" className="">
                   Turpis at eleifend Aenean porta
                 </Link>

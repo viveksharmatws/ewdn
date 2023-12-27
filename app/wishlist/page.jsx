@@ -52,6 +52,7 @@ const page = () => {
     const updatedWishContent = wishContent.filter(
       (product) => product.id !== itemId
     );
+
     setContent(updatedWishContent);
     localStorage.setItem("wishlist", JSON.stringify(updatedWishContent));
 
@@ -221,7 +222,7 @@ const page = () => {
                   </Link>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center gap-[10px]">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
                   {visible &&
                     productdetail &&
                     productdetail.length > 0 &&
@@ -231,6 +232,7 @@ const page = () => {
                           src={`/images${product.all_images[0]}`}
                           width={400}
                           height={400}
+                          alt="product switch image"
                         />
 
                         <Link

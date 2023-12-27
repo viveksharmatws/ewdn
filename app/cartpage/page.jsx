@@ -29,7 +29,7 @@ const page = () => {
                       src="/images/b1.jpg"
                       width={90}
                       height={110}
-                      className=""
+                      className="person"
                     />
                   </div>
                   <div className=" flex-col px-[5px] sm:px-[15px] max-sm:mt-0">

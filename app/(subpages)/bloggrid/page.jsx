@@ -274,7 +274,6 @@ const page = () => {
                     </Link>
                   </div>
                 </div>
-                {/* second card begins here  */}
               </div>
             </div>
           </div>

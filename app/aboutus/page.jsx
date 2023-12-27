@@ -41,7 +41,7 @@ const Aboutus = () => {
           <h1 className="text-[22px] capitalize font-semibold text-[#666666]">
             about Us
           </h1>
-          <div className="grid mt-[10px] gap-10 pb-5   sm:items-start max-sm:pl-10 sm:place-items-center xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 max-w-[1200px] w-full">
+          <div className="grid mt-[10px] gap-10 pb-5   sm:items-start max-sm:pl-10 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 max-w-[1200px] w-full">
             <div className="sm:max-w-[350px]">
               <div className="flex-col">
                 <h2 className="pb-2 text-[18px] font-semibold  text-[#666666]">

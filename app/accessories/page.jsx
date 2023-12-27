@@ -5,21 +5,16 @@ import Filterscomponent from "@/components/Filterscomponent";
 
 import jsonData from "../../data.json";
 import Image from "next/image";
-import StarIcon from "@mui/icons-material/Star";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
 import { LayoutList } from "lucide-react";
 import discountgirlbanner from "/public/images/discountleft.jpg";
-// import { SlGrid } from "react-icons/Sl";
 
 import { LayoutGrid } from "lucide-react";
-import input from "@/components/ui/input";
 import { IoStar } from "react-icons/io5";
 import SliderComponent from "@/components/SliderComponent";
 import HorizontalProductCard from "@/elements/Horizontalproductcard";
 import Categoryfilter from "@/elements/Categoryfilter";
 import LayoutGridfullwidth from "@/components/LayoutGridfullwidth";
 import { useState } from "react";
-import Carousel from "react-multi-carousel";
 
 import filters from "/filter.json";
 import Link from "@/node_modules/next/link";
@@ -181,7 +176,7 @@ const page = () => {
             </div>
             {isGrid ? (
               <div className="flex-col">
-                <div className="grid mt-[10px] gap-[10px] sm:gap-[15px] md:gap-[30px] pb-5 grid-cols-2 items-start  place-items-center md:grid-cols-3  xl:grid-cols-4 max-w-[1200px] w-full">
+                <div className="grid mt-[10px] gap-[10px] sm:gap-[15px] md:gap-[30px] pb-5 grid-cols-2 items-start   md:grid-cols-3  xl:grid-cols-4 max-w-[1200px] w-full">
                   {jsonData.map((product) => (
                     <div key={product.index} className="w-full">
                       <div className="group relative duration-1000 overflow-hidden">
@@ -204,7 +199,7 @@ const page = () => {
                           <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                             <Image
                               src="../images/heart.svg"
-                              alt=""
+                              alt="heart"
                               width={17}
                               height={17}
                               className="brightness-0 invert "
@@ -213,7 +208,7 @@ const page = () => {
                           <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                             <Image
                               src="../images/compare.svg"
-                              alt=""
+                              alt="compare"
                               width={17}
                               height={17}
                               className="brightness-0 invert"
@@ -223,7 +218,7 @@ const page = () => {
                           <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
                             <Image
                               src="../images/wide.svg"
-                              alt=""
+                              alt="wide"
                               width={17}
                               height={17}
                               className="brightness-0 invert"
@@ -233,7 +228,7 @@ const page = () => {
                           <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
                             <Image
                               src="../images/addtoviewpage.svg"
-                              alt=""
+                              alt="addtoview"
                               width={17}
                               height={17}
                               className="brightness-0  max-w-[17px] w-full invert"
@@ -274,8 +269,6 @@ const page = () => {
                     </div>
                   ))}
                 </div>
-
-                <div>{/* here is the layout switch section */}</div>
               </div>
             ) : (
               <div className="pb-[80px]">

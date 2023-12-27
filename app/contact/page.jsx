@@ -29,7 +29,7 @@ const page = () => {
                   src={drop}
                   width={20}
                   height={20}
-                  alt=""
+                  alt="store"
                   className="mt-[8px] stroke-black"
                 />
 

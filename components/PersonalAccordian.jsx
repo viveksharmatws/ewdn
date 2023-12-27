@@ -16,7 +16,6 @@ import {
   AccordionTrigger,
   AccordionItem,
 } from "@/components/ui/accordion";
-import { Trigger } from "@/node_modules/@radix-ui/react-accordion/dist/index";
 
 const PersonalAccordian = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -575,7 +574,7 @@ const PersonalAccordian = () => {
                             </div>
                           </label>
                           <div>
-                            <Image alt="van" src={van} />
+                            <Image alt="van" src={van} width={50} height={50} />
                           </div>
                         </div>
                         <div className="sm:flex max-sm:flex-col justify-between items-center col-span-2">
@@ -647,7 +646,6 @@ const PersonalAccordian = () => {
                 {savedForm3 && (
                   <AccordionContent>
                     <div className="flex-col px-[37px] py-[10px]    mb-[8px] pt-4">
-                      {/* this is something which is going to encompass the  checkboxes tripartite */}
                       <div className="flex-col ">
                         <div>
                           <label

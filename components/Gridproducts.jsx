@@ -25,31 +25,29 @@ const Gridproducts = () => {
   return (
     <div className="mx-auto max-w-[1430px] px-[15px] max-py-[30px]">
       <Dialog>
-        <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px] place-items-center sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
+        <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px]  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  ">
           {jsonData.map((product) => (
-            <Link
-              key={product.index}
-              href={`/products/${product.id}`}
-              className="w-full"
-            >
+            <div key={product.index} className="w-full">
               <div className="group relative duration-1000 overflow-hidden">
-                <Image
-                  src={`/images${product.all_images[0]}`}
-                  alt="Image of person"
-                  width={256}
-                  height={300}
-                  className=" opacity-100 w-full"
-                />
-                {product.all_images.length > 1 && (
+                <Link href={`/products/${product.id}`}>
                   <Image
-                    src={`/images${product.all_images[1]}`}
+                    src={`/images${product.all_images[0]}`}
                     alt="Image of person"
                     width={256}
                     height={300}
-                    className="opacity-0 w-full duration-1000 group-hover:opacity-100 absolute left-0 top-0"
+                    className=" opacity-100 w-full"
                   />
-                )}
-                <div href="#">
+                  {product.all_images.length > 1 && (
+                    <Image
+                      src={`/images${product.all_images[1]}`}
+                      alt="Image of person"
+                      width={256}
+                      height={300}
+                      className="opacity-0 w-full duration-1000 group-hover:opacity-100 absolute left-0 top-0"
+                    />
+                  )}
+                </Link>
+                <div href="/#">
                   <div className=" absolute right-[10px] top-[-25px] flex flex-col gap-2 opacity-0 duration-500 group-hover:right-[10px] group-hover:translate-y-[35px]  group-hover:opacity-100 group-hover:transition ">
                     <div
                       onClick={() => {
@@ -84,34 +82,34 @@ const Gridproducts = () => {
                     >
                       <Image
                         src="../images/heart.svg"
-                        alt=""
+                        alt="heart"
                         width={17}
                         height={17}
-                        className="brightness-0 invert "
+                        className="brightness-0 invert cursor-pointer "
                       />
                     </div>
                     <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                       <Image
                         src="../images/compare.svg"
-                        alt=""
+                        alt="compare"
                         width={17}
                         height={17}
-                        className="brightness-0 invert"
+                        className="brightness-0 invert cursor-pointer"
                       />
                     </div>
                     <DialogTrigger className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                       <Image
                         src="../images/wide.svg"
-                        alt=""
+                        alt="wide"
                         width={17}
                         height={17}
-                        className="brightness-0 invert"
+                        className="brightness-0 invert  cursor-pointer"
                       />
                     </DialogTrigger>
                     <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
                       <Image
                         src="../images/addtoviewpage.svg"
-                        alt=""
+                        alt="add to view page"
                         width={17}
                         height={17}
                         className="brightness-0 invert max-w-[17px] w-full"
@@ -136,11 +134,11 @@ const Gridproducts = () => {
                 </div>
               </div>
 
-              <div className="pt-[15px]">
-                <h3 className=" text-[16px] font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
+              <Link href={`/products/${product.id}`} className="pt-[15px]">
+                <h3 className=" mt-1 text-[16px] capitalize font-normal leading-[26px] tracking-[0.3px] text-[#666666]">
                   {product.subheading}
                 </h3>
-                <h2 className=" text-[20px] font-normal capitalize leading-[22px] tracking-[0.3px] line-clamp-1">
+                <h2 className="capitalize  text-[20px] font-normal  leading-[22px] tracking-[0.3px] line-clamp-1">
                   {product.heading}
                 </h2>
                 <div className="flex py-1">
@@ -153,8 +151,8 @@ const Gridproducts = () => {
                 <h3 className="mt-[4px] text-[20px] mb-5 font-medium leading-[20px] text-[#ff0000]  ">
                   ${product.price}
                 </h3>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
 
@@ -168,7 +166,6 @@ const Gridproducts = () => {
         </div>
         <Discountsection />
 
-        {/* {isRendered && ( */}
         <section className="mx-auto max-w-[1010px] p-[25px]">
           <DialogContent className="flex bg-white">
             <Dialogofproduct />

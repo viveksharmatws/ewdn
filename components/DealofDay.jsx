@@ -36,7 +36,7 @@ const DealofDay = () => {
                 <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                   <Image
                     src="../images/heart.svg"
-                    alt=""
+                    alt="heart"
                     width={17}
                     height={17}
                     className="brightness-0 invert "
@@ -45,7 +45,7 @@ const DealofDay = () => {
                 <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                   <Image
                     src="../images/compare.svg"
-                    alt=""
+                    alt="compare"
                     width={17}
                     height={17}
                     className="brightness-0 invert"
@@ -54,7 +54,7 @@ const DealofDay = () => {
                 <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                   <Image
                     src="../images/wide.svg"
-                    alt=""
+                    alt="wide"
                     width={17}
                     height={17}
                     className="brightness-0 invert"
@@ -63,7 +63,7 @@ const DealofDay = () => {
                 <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
                   <Image
                     src="../images/addtoviewpage.svg"
-                    alt=""
+                    alt="addtoviewpage"
                     width={17}
                     height={17}
                     className="brightness-0 invert max-w-[17px] w-full"

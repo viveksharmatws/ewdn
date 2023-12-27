@@ -107,15 +107,15 @@ const page = () => {
             <div className="p-[15px]  lg:flex gap-4 ">
               <div className=" hidden  lg:flex max-w-[100px] max-h-[600px] ">
                 <Slider {...settings}>
-                  {carouselImages.map((i) => (
-                    <div className="max-h-[200px] ">
+                  {carouselImages.map((i, index) => (
+                    <div key={index} className="max-h-[200px] ">
                       <Image
                         src={i}
                         width={100}
                         height={50}
                         onClick={() => handleImageClick(i)}
                         className="w-full"
-                        alt="image"
+                        alt="image carousal product"
                       />
                     </div>
                   ))}
@@ -143,6 +143,7 @@ const page = () => {
                         height={150}
                         onClick={() => handleImageClick(i)}
                         className="w-full"
+                        alt="carousal img"
                       />
                     </div>
                   ))}
@@ -265,6 +266,7 @@ const page = () => {
                     toast({
                       title: "This Product is added to your cart",
                       description: `${product.heading} is added to your cart`,
+                      id: `${product.id}`,
                     });
                   }}
                 >
@@ -280,7 +282,12 @@ const page = () => {
                 </h3>
               </div>
               <div className=" flex items-center justify-center gap-2">
-                <Image alt="" src="/images/heart.svg" width={20} height={20} />
+                <Image
+                  alt="heart"
+                  src="/images/heart.svg"
+                  width={20}
+                  height={20}
+                />
 
                 <h3 className="sm:text-[18px] text-[14px]  font-normal capitalize leading-[22px] tracking-[0.5px] text-black">
                   add to wishlist
@@ -295,13 +302,28 @@ const page = () => {
 
             <div className="flex gap-2 mb-[10px]">
               <div className="items-center justify-center flex w-[58px] h-[33px] hover:fill-[#00f0e0] border-[#00f0e0] border">
-                <Image src="/images/twitter.png" width={65} height={35} />
+                <Image
+                  alt="social-media-icon"
+                  src="/images/twitter.png"
+                  width={65}
+                  height={35}
+                />
               </div>
               <div className="items-center justify-center flex w-[58px] h-[33px] hover:fill-[#ff0000] border-[#ff0000] border">
-                <Image src="/images/pinterst.png" width={35} height={35} />
+                <Image
+                  alt="social-media-icon"
+                  src="/images/pinterst.png"
+                  width={35}
+                  height={35}
+                />
               </div>
               <div className="items-center justify-center flex w-[58px] h-[33px] hover:fill-[#435f9f] border-[#435f9f] border">
-                <Image src="/images/facebook.png" width={35} height={35} />
+                <Image
+                  alt="social-media-icon"
+                  src="/images/facebook.png"
+                  width={35}
+                  height={35}
+                />
               </div>
             </div>
 
@@ -330,7 +352,7 @@ const page = () => {
             <h2 className="sm:text-[45px] max-sm:text-[30px] font-normal">
               You might also like
             </h2>
-            <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px] place-items-center sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  w-full ">
+            <div className="grid mt-[40px] grid-cols-2 items-start gap-[10px] sm:gap-[30px]  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5  w-full ">
               {jsonData.map((product) => (
                 <div key={product.index} className="">
                   <div className="group relative duration-1000 overflow-hidden">
@@ -460,7 +482,7 @@ const page = () => {
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center   ">
                         <Image
                           src="../images/heart.svg"
-                          alt=""
+                          alt="heart"
                           width={17}
                           height={17}
                           className="brightness-0 invert "
@@ -469,7 +491,7 @@ const page = () => {
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                         <Image
                           src="../images/compare.svg"
-                          alt=""
+                          alt="compare"
                           width={17}
                           height={17}
                           className="brightness-0 invert"
@@ -478,7 +500,7 @@ const page = () => {
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-black  hover:bg-red-600 group-hover:items-center group-hover:justify-center  ">
                         <Image
                           src="../images/wide.svg"
-                          alt=""
+                          alt="wide"
                           width={17}
                           height={17}
                           className="brightness-0 invert"
@@ -487,7 +509,7 @@ const page = () => {
                       <div className="flex h-[30px] w-[30px] items-center justify-center rounded-full  bg-black hover:bg-red-600 group-hover:items-center  group-hover:justify-center ">
                         <Image
                           src="../images/addtoviewpage.svg"
-                          alt=""
+                          alt="addtoviewpage img icon"
                           width={17}
                           height={17}
                           className="brightness-0 invert max-w-[17px] w-full"

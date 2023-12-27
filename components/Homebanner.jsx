@@ -66,7 +66,7 @@ const Homebanner = () => {
               <div className="sm:mt-10">
                 <Link
                   href="/products"
-                  className="rounded-none bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0 cursor-pointer   xl:text-[17px] sm:mt-[20px] transition duration-1000 xl:mt-40"
+                  className="rounded-none  bg-[#222]  max-sm:bg-transparent max-sm:underline leading-1  py-[14px] px-[34px] text-[12px] sm:text-[17px] font-medium leading-[10px] sm:leading-[22px]  sm:tracking-[0.5px] sm:text-white hover:text-black   max-sm:p-0 hover:bg-white md:mt-0 cursor-pointer   xl:text-[17px] sm:mt-[20px] transition duration-1000 xl:mt-40"
                 >
                   Shop Now
                 </Link>

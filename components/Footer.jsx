@@ -6,11 +6,8 @@ import express from "../public/images/express.png";
 import mastercard from "../public/images/mastercard.png";
 import visa from "../public/images/visa.png";
 import ce from "../public/images/ce.png";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import { Checkbox } from "@/components/ui/checkbox";
-import { AiOutlineMail } from "react-icons/ai";
 import drop from "/public/images/droplocation.svg";
 import message from "/public/images/message.svg";
 
@@ -35,7 +32,7 @@ const Footer = () => {
                         src={drop}
                         width={20}
                         height={20}
-                        alt=""
+                        alt="store"
                         className="mr-[5px] invert mt-2"
                       />
 
@@ -52,7 +49,7 @@ const Footer = () => {
                         src={message}
                         width={20}
                         height={20}
-                        alt=""
+                        alt="message"
                         className="mr-[5px] invert "
                       />
                       <Link
@@ -88,7 +85,7 @@ const Footer = () => {
                     Products
                   </h2>
                   <ul className="font-[18px] no-underline text-[#b2b2b2] ">
-                    <li className="mb-[3px]  leading-[33px] flex items-center gap-1 hover:translate-x-3 hover:text-white hover:transition hover:duration-[9000ms] hover:text-white">
+                    <li className="mb-[3px]  leading-[33px] flex items-center gap-1 hover:translate-x-3  hover:transition hover:duration-[9000ms] hover:text-white">
                       <ArrowRight size={15} />
 
                       <Link href="/products" className="text-[18px] pl-1">
@@ -200,20 +197,15 @@ const Footer = () => {
                       />
                     </li>
                     <li className="mb-[3px] leading-[33px] ">
-                      {/* <Link href="#" className=""> */}
-
                       <Button
                         variant="outline"
                         className="bg-[#B30D0D] rounded-sm border-none text-[#B3B2B2] px-[34px] py-[10px] leading-[22px] tracking-[0.5px] font-med  text-[18px] mb-3"
                       >
                         Subscribe
                       </Button>
-                      {/* </Link> */}
                     </li>
                     <li className="mb-[3px]  leading-[33px] flex gap-2 px-1">
-                      {/* <Link href="#" className="text-[18px] pl-1"> */}
                       <Checkbox className="mt-1 text-[18px] text-white" />
-                      {/* </Link> */}
                       <p className="text-[18px] leading-[25px] ">
                         I agree to the terms and conditions and the privacy
                         policy
@@ -228,12 +220,12 @@ const Footer = () => {
       </footer>
       <bottomfoot className=" z-50   bg-[#262626]   ">
         <div
-          className="  sm:flex items-center  max-sm:flex-col justify-between justify-items-center  px-[10px] md:px-[10px] mx-auto w-full px-[15px]  bg-[#262626] border-[#666666] "
+          className="  sm:flex items-center  max-sm:flex-col justify-between justify-items-center   md:px-[10px] mx-auto w-full px-[15px]  bg-[#262626] border-[#666666] "
           style={{
             borderTop: "1px solid #666666",
           }}
         >
-          <div className=" mx-auto max-w-[1400px]    sm:flex items-center  max-sm:flex-col justify-between justify-items-center   md:px-2 xl:px-0 mx-auto w-full   bg-[#262626]">
+          <div className=" mx-auto max-w-[1400px]    sm:flex items-center  max-sm:flex-col justify-between justify-items-center   md:px-2 xl:px-0 w-full   bg-[#262626]">
             <div className="text-center max-sm:pt-4">
               <span className=" text-[18px] text-white max-sm:text-center">
                 © 2023 - Ecommerce software by PrestaShop™
@@ -243,27 +235,32 @@ const Footer = () => {
               <ul className=" flex items-center justify-center  text-white no-underline ">
                 <li>
                   <Link href="#" className="mx-[22px]">
-                    <Image src={ce} alt="visa" />
+                    <Image src={ce} alt="visa" width={40} height={25} />
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="mx-[22px]">
-                    <Image src={visa} alt="visa" />
+                    <Image src={visa} alt="visa" width={40} height={25} />
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="mx-[22px]">
-                    <Image src={mastercard} alt="mastercard" />
+                    <Image
+                      src={mastercard}
+                      alt="mastercard"
+                      width={40}
+                      height={25}
+                    />
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="mx-[22px]">
-                    <Image src={express} alt="express" />
+                    <Image src={express} alt="express" width={40} height={25} />
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="mx-[22px]">
-                    <Image src={paypal} alt="express" />
+                    <Image src={paypal} alt="express" width={40} height={25} />
                   </Link>
                 </li>
               </ul>

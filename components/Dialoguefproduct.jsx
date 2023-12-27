@@ -207,7 +207,7 @@ const Dialogofproduct = () => {
               />
             </div>
             <div className="  flex min-w-[200px] items-center justify-center bg-sky-500 px-[25px] py-[10px] text-white hover:bg-black hover:text-white">
-              <h3>Add to Cart</h3>
+              <h3 className="cursor-pointer">Add to Cart</h3>
             </div>
           </div>
           <div className="mt-[15px] flex gap-5">

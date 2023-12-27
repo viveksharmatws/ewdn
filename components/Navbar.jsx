@@ -10,7 +10,6 @@ import bag from "../public/images/bag.svg";
 import { AlignJustify } from "lucide-react";
 import { Trash } from "lucide-react";
 
-// const { toast } = useToast();
 import {
   AlertDialog,
   AlertDialogAction,
@@ -124,12 +123,11 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-
           <div>
             <p className="text-white text-[15px] lg:block hidden">
               Summer Sale Season Up To 25% OFF
               <span className="px-1">-</span>
-              <Link href="/products" className="text-[#ff7979] underline">
+              <Link href="/products" className="text-[#ff0000] underline">
                 Shop Now
               </Link>
             </p>
@@ -157,7 +155,7 @@ const Navbar = () => {
                       <div>
                         <Image
                           src={america}
-                          alt="america"
+                          alt="america logo"
                           width={16}
                           height={11}
                         />
@@ -346,15 +344,14 @@ const Navbar = () => {
                       <>
                         {products?.map((item, index) => (
                           <>
-                            <div className="overflow-y-auto">
+                            <div key={index} className="overflow-y-auto">
                               <div className="flex  pt-[10px] gap-[10px] ">
                                 <div className="shrink-0">
                                   <Image
                                     src={`/images${item.all_images[1]}`}
-                                    alt=""
+                                    alt="product"
                                     width={100}
                                     height={100}
-                                    className=""
                                   />
                                 </div>
                                 <div className="flex-col shrink-1">

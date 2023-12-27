@@ -14,7 +14,7 @@ const LayoutGridfullwidth = () => {
             <div className=" item-center justify-center flex  max-w-[260px] max-sm:mx-auto sm:min-w-[260px] max-h-[360px] shrink-0">
               <Image
                 src={`/images${product.all_images[0]}`}
-                alt=""
+                alt="prouct "
                 width={260}
                 height={316}
                 className="shrink-0 w-full"
