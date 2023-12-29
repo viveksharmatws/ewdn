@@ -8,7 +8,7 @@ import { ChevronLeft } from "lucide-react";
 import { Home } from "lucide-react";
 import { Trash } from "lucide-react";
 import Image from "@/node_modules/next/image";
-import jsonData from "..data.json";
+import jsonData from "../data.json";
 import {
   AlertDialog,
   AlertDialogAction,
