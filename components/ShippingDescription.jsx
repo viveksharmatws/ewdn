@@ -3,8 +3,8 @@ import React from "react";
 const ShippingDescription = () => {
   return (
     <section className="mx-auto max-w-[1430px] px-[15px]  min-w-[400px]:py-[30px] pb-[40px]   xl:pt-[50px] xl:pb-[90px]">
-      <div className="grid  min-w-[450px]:bg-red-900 min-w-[450px]:grid-cols-2 grid-cols-1 gap-3  sm:grid-cols-3 xl:grid-cols-5">
-        <div className="max-xl:flex-col group flex max-xl:items-center ">
+      <div className="grid min-w-[450px]:bg-red-900 gap-3 grid-cols-1 min-[400px]:grid-cols-2  sm:grid-cols-3 xl:grid-cols-5 md:grid-cols-2">
+        <div className="max-xl:flex-col max-sm:flex group flex max-sm:items-center max-xl:items-center ">
           <div className="max-xl:pt-3">
             <svg
               className="h-[40px] w-[50px]  transition duration-1000 group-hover:-translate-y-4 group-hover:fill-[red] "
@@ -28,7 +28,7 @@ const ShippingDescription = () => {
           </div>
         </div>
 
-        <div className="max-xl:flex-col group flex max-xl:items-center ">
+        <div className="max-xl:flex-col max-sm:flex group flex max-sm:items-center max-xl:items-center ">
           <div className="max-xl:pt-3">
             <svg
               className="h-[40px] w-[50px]  transition duration-1000 group-hover:-translate-y-4 group-hover:fill-[red]"
@@ -66,7 +66,7 @@ const ShippingDescription = () => {
           </div>
         </div>
 
-        <div className="max-xl:flex-col group flex max-xl:items-center ">
+        <div className="max-xl:flex-col max-sm:flex group flex max-sm:items-center max-xl:items-center ">
           <div className="max-xl:pt-3">
             <svg
               className="h-[40px] w-[50px]  transition duration-1000 group-hover:-translate-y-4 group-hover:fill-[red]"
@@ -92,7 +92,7 @@ const ShippingDescription = () => {
           </div>
         </div>
 
-        <div className="max-xl:flex-col group flex max-xl:items-center">
+        <div className="max-xl:flex-col max-sm:flex group flex max-sm:items-center max-xl:items-center">
           <div className="max-xl:pt-3">
             <svg
               className="h-[40px] w-[50px]  transition duration-1000 group-hover:-translate-y-4 group-hover:fill-[red]"
@@ -116,7 +116,7 @@ const ShippingDescription = () => {
           </div>
         </div>
 
-        <div className="max-xl:flex-col group flex max-xl:items-center">
+        <div className="max-xl:flex-col max-sm:flex group flex max-sm:items-center max-xl:items-center">
           <div className="max-xl:pt-3">
             <svg
               className="h-[40px] w-[50px]  transition duration-1000 group-hover:-translate-y-4 group-hover:fill-[red]"

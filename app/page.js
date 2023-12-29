@@ -13,8 +13,7 @@ import ShippingDescription from "@/components/ShippingDescription";
 import Testimonials from "@/components/Testimonials";
 import Tshirtspec from "@/components/Tshirtspec";
 import BrandCarousal from "@/components/brandcarousal";
-import React, { Suspense } from "react";
-import loading from "./loading";
+import React from "react";
 
 const page = () => {
   return (

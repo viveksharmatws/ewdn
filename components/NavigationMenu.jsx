@@ -56,7 +56,7 @@ const NavigationMenubar = () => {
                               href="/products"
                               className="cursor-pointer line-clamp-1"
                             >
-                              Sneaker Shoes{" "}
+                              Sneaker Shoes
                             </Link>
                             <Link
                               href="/products"

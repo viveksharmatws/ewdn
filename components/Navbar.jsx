@@ -248,7 +248,7 @@ const Navbar = () => {
       </nav>
       <Sheet>
         <div className="bg-white  ">
-          <div className="mx-auto flex max-w-[1430px] justify-between  py-[8px] md:py-[20px] px-[15px]  max-md:items-center max-md:gap-10">
+          <div className="mx-auto flex max-w-[1430px] justify-between  py-[14px] md:py-[20px] px-[15px]  max-md:items-center max-md:gap-10">
             <div className="flex items-center justify-center gap-2">
               <div className="lg:hidden block">
                 <SheetTrigger className="flex bg-white">

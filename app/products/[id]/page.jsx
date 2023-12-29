@@ -379,12 +379,12 @@ const page = () => {
                 />
               </div>
               <div className="items-center justify-center flex w-[58px] h-[33px] hover:fill-[#435f9f] border-[#435f9f] border">
-                <Image
-                  alt="social-media-icon"
-                  src="/images/facebook.png"
-                  width={35}
-                  height={35}
-                />
+                <a
+                  href="https://www.flaticon.com/free-icons/facebook"
+                  title="facebook icons"
+                >
+                  d
+                </a>
               </div>
             </div>
 
