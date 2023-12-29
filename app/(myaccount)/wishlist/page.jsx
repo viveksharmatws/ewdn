@@ -5,11 +5,10 @@ import { Input } from "@/components/ui/input";
 import Link from "@/node_modules/next/link";
 import React, { useEffect, useState } from "react";
 import { ChevronLeft } from "lucide-react";
-import { AlignLeft } from "lucide-react";
 import { Home } from "lucide-react";
 import { Trash } from "lucide-react";
 import Image from "@/node_modules/next/image";
-import jsonData from "../../data.json";
+import jsonData from "../../../data.json";
 import {
   AlertDialog,
   AlertDialogAction,
