@@ -11,6 +11,7 @@ const Josty = Jost({
 export const metadata = {
   title: "Ecommerce Website",
   description: "Developed by Yashpreet Rana",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {

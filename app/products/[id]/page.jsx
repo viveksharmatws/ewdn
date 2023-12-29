@@ -17,7 +17,7 @@ import Breadcrumbcomponent from "@/components/Breadcrumbcomponent";
 import Security from "@/elements/securty";
 
 import Reviews from "@/elements/Reviews";
-import jsonData from "data.json";
+import jsonData from "../../../data.json";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import Tabscompo from "@/components/Tabs";
 import Link from "@/node_modules/next/link";
@@ -284,9 +284,9 @@ const page = () => {
                   className="max-w-[70px] outline-none text-black text-[22px] min-h-[44px]"
                 />
               </div>
-              <div className="  flex sm:min-w-[200px] min-w-[150px] items-center justify-center  px-[15px] py-[10px] sm:px-[25px] sm:py-[10px] text-white bg-[#222] hover:text-white min-h-[44px]">
+              <div>
                 <button
-                  className="cursor-pointer"
+                  className="flex sm:min-w-[200px] min-w-[150px] items-center justify-center  px-[15px] py-[10px] sm:px-[25px] sm:py-[10px] text-white bg-[#222] hover:text-white min-h-[44px] cursor-pointer"
                   onClick={() => {
                     addToCart(product);
                     toast({

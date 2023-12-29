@@ -1,11 +1,16 @@
+// Note : To required('next-pwa') you should install that package as explain
+// above. If you miss that please install it with npm i next-pwa command.
+
 const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
-  scope: "/app",
-  sw: "service-worker.js",
-  // ... other PWA configuration options
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
 });
 
-module.exports = withPWA({
-  // next.js config
+const nextConfig = withPWA({
+  reactStrictMode: true,
+  swcMinify: true,
 });
+
+module.exports = nextConfig;
