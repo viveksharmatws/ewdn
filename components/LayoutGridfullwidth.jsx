@@ -1,11 +1,39 @@
 import Image from "next/image";
-import StarIcon from "@mui/icons-material/Star";
-import StarHalfIcon from "@mui/icons-material/StarHalf";
+
 import jsonData from "../data.json";
 import Link from "@/node_modules/next/link";
 import { IoStar } from "react-icons/io5";
+import { useToast } from "./ui/use-toast";
 
 const LayoutGridfullwidth = () => {
+  const { toast } = useToast();
+
+  const addToCart = (product, inputValue = null) => {
+    // Retrieve existing cart items from local storage
+    const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product with the same ID already exists in the cart
+    const isProductInCart = existingCartItems.some(
+      (item) => item.id === product.id
+    );
+
+    if (isProductInCart) {
+      // If the product is already in the cart, show a message
+      console.log("Product is already in the cart");
+    } else {
+      // If the product is not in the cart, add it with additional data
+      const updatedCart = [
+        ...existingCartItems,
+        { ...product, inputValue: inputValue || 1 },
+      ];
+
+      // Save the updated cart to local storage
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      console.log("Product added to the cart");
+    }
+  };
+
   return (
     <>
       {jsonData.map((product) => (
@@ -68,7 +96,20 @@ const LayoutGridfullwidth = () => {
                 </h2>
               </div>
 
-              <button className=" mt-[10px] p-[10px] bg-black text-white min-w-[170px] max-sm:text-center">
+              <button
+                onClick={() => {
+                  addToCart(product);
+                  toast({
+                    title: "This Product is added to your cart",
+                    description: `${product.heading} is added to your cart`,
+                    id: `${product.id}`,
+                  });
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 1000);
+                }}
+                className=" mt-[10px] p-[10px] bg-black text-white min-w-[170px] max-sm:text-center"
+              >
                 {product.button}
               </button>
             </div>

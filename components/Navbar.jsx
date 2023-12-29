@@ -69,7 +69,7 @@ const Navbar = () => {
 
   if (products && Array.isArray(products)) {
     products.forEach((item) => {
-      const price = Number(item.price);
+      const price = Number(item.price) * Number(item.inputValue);
       if (!isNaN(price)) {
         pricesArray.push(price);
       }
@@ -360,7 +360,11 @@ const Navbar = () => {
                               <div className="flex  pt-[10px] gap-[10px] ">
                                 <div className="shrink-0">
                                   <Image
-                                    src={`/images${item.all_images[1]}`}
+                                    src={
+                                      item?.all_images && item.all_images[1]
+                                        ? `/images${item.all_images[1]}`
+                                        : ""
+                                    }
                                     alt="product"
                                     width={100}
                                     height={100}
@@ -381,7 +385,9 @@ const Navbar = () => {
                                         className="text-[18px] tracking-[0.5px]"
                                         key={index}
                                       >
-                                        1 X {item?.price}
+                                        {item
+                                          ? `${item.inputValue} X ${item.price}`
+                                          : null}
                                       </h1>
 
                                       <span className=" px-1 text-[#ff0000] text-[18px] font-medium">
@@ -482,9 +488,13 @@ const Navbar = () => {
                             <div>
                               <p className="text-[18px] font-semibold text-[#ff0000]">
                                 $
-                                {sumOfPrices +
-                                  (sumOfPrices * 18) / 100 +
-                                  products?.length * 3}
+                                {parseFloat(
+                                  (
+                                    sumOfPrices +
+                                    (sumOfPrices * 18) / 100 +
+                                    products?.length * 3
+                                  ).toFixed(2)
+                                )}
                               </p>
                             </div>
                           </div>

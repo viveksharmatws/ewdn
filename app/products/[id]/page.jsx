@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { MdContentCopy } from "react-icons/md";
 import Image from "next/image";
 
@@ -97,16 +96,33 @@ const page = () => {
   };
 
   const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
+    setInputValue(event.target.value);
   };
+
   const addToCart = (product) => {
+    // Retrieve existing cart items from local storage
     const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    const updatedCart = [
-      ...existingCartItems,
-      { ...product, inputValue: inputValue },
-    ];
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    // Check if the product with the same ID already exists in the cart
+    const isProductInCart = existingCartItems.some(
+      (item) => item.id === product.id
+    );
+
+    if (isProductInCart) {
+      // If the product is already in the cart, show a message
+      console.log("Product is already in the cart");
+    } else {
+      // If the product is not in the cart, add it with additional data
+      const updatedCart = [
+        ...existingCartItems,
+        { ...product, inputValue: inputValue },
+      ];
+
+      // Save the updated cart to local storage
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      console.log("Product added to the cart");
+    }
   };
   return (
     <>

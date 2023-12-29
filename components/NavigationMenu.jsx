@@ -31,7 +31,7 @@ const NavigationMenubar = () => {
               <NavigationMenuList>
                 <NavigationMenuItem className="xl:ml-[150px] ">
                   <NavigationMenuTrigger className="pr-10">
-                    <p className="text-[18px] leading-[22px]  tracking-[0.5px] font-medium">
+                    <p className="text-[18px] leading-[22px]   tracking-[0.5px] font-medium">
                       Fashion
                     </p>
                   </NavigationMenuTrigger>
