@@ -57,12 +57,12 @@ const page = () => {
 
         {isProductsEmpty ? (
           <div className="  max-w-[1430px] mx-auto gap-[30px] w-full">
-            <div className="flex gap-5">
+            <div className="max-sm:flex-col md:flex gap-5  max-w-[500px] w-full">
               <Image
                 src="/images/cart.jpg"
                 width={1000}
                 height={1000}
-                className="max-w-[500px]"
+                className=""
               />
               <div className="flex justify-center w-full items-center">
                 <div>
@@ -72,7 +72,7 @@ const page = () => {
 
                   <Link href="/accessories">
                     <button
-                      class="text-[#00E6CD] bg-transparent text-lg mt-5 border border-solid border-[#00E6CD] hover:bg-[#52cfc1] hover:text-white active:bg-[#00E6CD] font-bold uppercase px-6 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      class="text-[#00E6CD] bg-transparent max-sm:text-sm sm:text-lg mt-5 border border-solid border-[#00E6CD] hover:bg-[#52cfc1] hover:text-white active:bg-[#00E6CD] font-bold uppercase px-6 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
                     >
                       Continue Shopping
@@ -84,7 +84,7 @@ const page = () => {
           </div>
         ) : (
           <div className="flex max-lg:flex-col   max-w-[1430px] mx-auto gap-[30px] w-full px-[15px]">
-            <div className="w-full pb-60">
+            <div className="w-full pb-20 lg:pb-60">
               {products &&
                 products.map((product) => (
                   <div className="flex-col">
@@ -137,7 +137,7 @@ const page = () => {
                               <span className="pr-2 hidden max-sm:block text-[18px]">
                                 Items
                               </span>
-                              <p className=" max-w-[78px]  appearance-none  text-[20px] outline-none text-black  min-h-[40px]">
+                              <p className=" max-w-[78px]  appearance-none  text-[20px] outline-none text-black  sm:min-h-[40px]">
                                 {product.inputValue} item
                               </p>
                             </div>

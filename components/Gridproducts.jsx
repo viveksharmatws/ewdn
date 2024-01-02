@@ -175,7 +175,7 @@ const Gridproducts = () => {
         </div>
         <Discountsection />
 
-        <section className="mx-auto max-w-[1010px] p-[25px]">
+        <section className="mx-auto max-w-[1010px] max-md:hidden block p-[25px]">
           <DialogContent className="flex bg-white">
             <Dialogofproduct />
           </DialogContent>

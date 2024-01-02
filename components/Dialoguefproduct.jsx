@@ -26,7 +26,7 @@ const Dialogofproduct = () => {
   };
   return (
     <>
-      <div className="max-w-[330] w-full flex">
+      <div className="max-w-[330] w-full flex  ">
         <div className="w-1/2 ">
           <div className="p-[15px]">
             <div>
